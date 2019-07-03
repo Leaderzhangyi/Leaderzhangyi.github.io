@@ -2,6 +2,29 @@
 <search>
   <entry>
     <title><![CDATA[分类、tags测试]]></title>
+    <url>%2F%E6%88%91%E6%98%AF2.html</url>
+    <content type="text"><![CDATA[正在搭建中QQ。。。未完待续，有1451561]]></content>
+      <categories>
+        <category>搭建博客</category>
+      </categories>
+      <tags>
+        <tag>qq</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[我是1]]></title>
+    <url>%2F%E6%88%91%E6%98%AF1.html</url>
+    <content type="text"><![CDATA[正在搭建中wechat。。。未完待续，有1451561]]></content>
+      <categories>
+        <category>搭建博客</category>
+      </categories>
+      <tags>
+        <tag>qq</tag>
+        <tag>wechat</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[分类、tags测试]]></title>
     <url>%2F%E6%B5%8B%E8%AF%95.html</url>
     <content type="text"><![CDATA[正在搭建中。。。未完待续，有1451561]]></content>
       <categories>

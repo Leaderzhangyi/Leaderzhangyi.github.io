@@ -48,6 +48,10 @@
 
 
 
+  
+  
+  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css">
+
 
 
 
@@ -84,8 +88,8 @@
     version: '7.1.2',
     sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
     back2top: true,
-    back2top_sidebar: false,
-    fancybox: false,
+    back2top_sidebar: true,
+    fancybox: true,
     fastclick: false,
     lazyload: false,
     tabs: true,
@@ -518,6 +522,7 @@
               <p class="site-author-name" itemprop="name">Z.lnk</p>
               <div class="site-description motion-element" itemprop="description">以梦为马，不负昭华</div>
           </div>
+		  
 
           
             <nav class="site-state motion-element">
@@ -526,7 +531,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -568,7 +573,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">3</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -660,6 +669,57 @@
               </ul>
             </div>
           
+		    <center><div id="days" style="color: #35cc4b;font-size: 10px;"></div></center>
+
+<script>
+
+function show_date_time(){
+
+window.setTimeout("show_date_time()", 1000);
+
+BirthDay=new Date("07/01/2019 00:00:00");
+
+today=new Date();
+
+timeold=(today.getTime()-BirthDay.getTime());
+
+sectimeold=timeold/1000
+
+secondsold=Math.floor(sectimeold);
+
+msPerDay=24*60*60*1000
+
+e_daysold=timeold/msPerDay
+
+daysold=Math.floor(e_daysold);
+
+e_hrsold=(e_daysold-daysold)*24;
+
+hrsold=setzero(Math.floor(e_hrsold));
+
+e_minsold=(e_hrsold-hrsold)*60;
+
+minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
+
+seconds=setzero(Math.floor((e_minsold-minsold)*60));
+
+document.getElementById('days').innerHTML="已安全运行 "+daysold+" 天 "+hrsold+" 小时 "+minsold+" 分 "+seconds+" 秒";
+
+}
+
+function setzero(i){
+
+if (i<10)
+
+{i="0" + i};
+
+return i;
+
+}
+
+show_date_time();
+
+</script>
 
           
             
@@ -667,14 +727,23 @@
           
 
         </div>
+		
       </div>
 
       
 
       
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
 
     </div>
   </aside>
+  
   
 
 
@@ -710,6 +779,8 @@
     <span title="站点阅读时长">阅读本站≈6 分钟</span>
   
 </div>
+
+
 
 
 
@@ -759,13 +830,6 @@
     </footer>
 
     
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-          <span id="scrollpercent"><span>0</span>%</span>
-        
-      </div>
-    
 
     
 
@@ -793,6 +857,8 @@
 
 
 
+  
+
 
 
 
@@ -818,6 +884,9 @@
 
   
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/fancybox/source/jquery.fancybox.pack.js"></script>
 
   
   <script src="/lib/three/three.min.js"></script>
@@ -1289,7 +1358,7 @@
   
       <script type="text/javascript" src="/js/src/clicklove.js"></script>
   
-</body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 
 
 </html>
