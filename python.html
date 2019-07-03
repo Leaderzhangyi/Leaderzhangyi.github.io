@@ -122,7 +122,7 @@
 
   <meta name="description" content="利用python爬取好友说说并分析   看了网上的许多博客，基本上都是一个样，基本的知识也没详细解释，我这次也想跟大家仔细分析一下，自己还是要有一定爬虫基础，本人技术有限，如果本文哪有错误或不够准确的地方，还望大牛们指点ヾ(๑╹◡╹)ﾉ”  一、环境配置： Python 3.6 selenium (注意:先配置好自己浏览器的驱动，下载地址看下面)  pymysql re requests  点击下">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python爬虫">
+<meta property="og:title" content="Python单线程爬取QQ空间说说存入MySQL并生成词云（超详细讲解，踩坑经历）">
 <meta property="og:url" content="https://leaderzhangyi.github.io/python.html">
 <meta property="og:site_name" content="ZhangYi&#39;s Blog">
 <meta property="og:description" content="利用python爬取好友说说并分析   看了网上的许多博客，基本上都是一个样，基本的知识也没详细解释，我这次也想跟大家仔细分析一下，自己还是要有一定爬虫基础，本人技术有限，如果本文哪有错误或不够准确的地方，还望大牛们指点ヾ(๑╹◡╹)ﾉ”  一、环境配置： Python 3.6 selenium (注意:先配置好自己浏览器的驱动，下载地址看下面)  pymysql re requests  点击下">
@@ -142,9 +142,9 @@
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006pybPDgy1fzf6v66w82j30zy03kjrz.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006pybPDgy1fzfbtje5nzj30u009e3z4.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006pybPDgy1fzfbyjdgg4j32w41xgb2a.jpg">
-<meta property="og:updated_time" content="2019-07-02T03:48:22.721Z">
+<meta property="og:updated_time" content="2019-07-03T07:55:21.813Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python爬虫">
+<meta name="twitter:title" content="Python单线程爬取QQ空间说说存入MySQL并生成词云（超详细讲解，踩坑经历）">
 <meta name="twitter:description" content="利用python爬取好友说说并分析   看了网上的许多博客，基本上都是一个样，基本的知识也没详细解释，我这次也想跟大家仔细分析一下，自己还是要有一定爬虫基础，本人技术有限，如果本文哪有错误或不够准确的地方，还望大牛们指点ヾ(๑╹◡╹)ﾉ”  一、环境配置： Python 3.6 selenium (注意:先配置好自己浏览器的驱动，下载地址看下面)  pymysql re requests  点击下">
 <meta name="twitter:image" content="https://s2.ax1x.com/2019/01/21/ki2cDJ.md.png">
 
@@ -164,7 +164,7 @@
   };
 </script>
 
-  <title>Python爬虫 | ZhangYi's Blog</title>
+  <title>Python单线程爬取QQ空间说说存入MySQL并生成词云（超详细讲解，踩坑经历） | ZhangYi's Blog</title>
   
 
 
@@ -464,7 +464,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Python爬虫
+          <h1 class="post-title" itemprop="name headline">Python单线程爬取QQ空间说说存入MySQL并生成词云（超详细讲解，踩坑经历）
 
               
             
@@ -490,13 +490,23 @@
                 
               
 
-              <time title="创建时间：2019-07-02 10:42:16 / 修改时间：11:48:22" itemprop="dateCreated datePublished" datetime="2019-07-02T10:42:16+08:00">2019-07-02</time>
+              <time title="创建时间：2019-07-02 10:42:16" itemprop="dateCreated datePublished" datetime="2019-07-02T10:42:16+08:00">2019-07-02</time>
             </span>
           
 
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-07-03 15:55:21" itemprop="dateModified" datetime="2019-07-03T15:55:21+08:00">2019-07-03</time>
+              </span>
             
           
 
@@ -705,12 +715,12 @@
   <li class="post-copyright-author">
     <strong>本文作者： </strong>Z.lnk</li>
   <li class="post-copyright-link"><strong>发布时间:</strong> 2019年07月02日 - 10:42:16</li>
-  <li class="post-copyright-link"><strong>最后更新:</strong> 2019年07月02日 - 11:48:22</li>
+  <li class="post-copyright-link"><strong>最后更新:</strong> 2019年07月03日 - 15:55:21</li>
   
   <li class="post-copyright-link">
    <strong>本文链接：</strong>
     
-    <a href="https://leaderzhangyi.github.io/python.html" title="Python爬虫">https://leaderzhangyi.github.io/python.html</a> &nbsp;&nbsp;&nbsp;&nbsp;<span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://leaderzhangyi.github.io/python.html" aria-label="复制成功！"></i></span>
+    <a href="https://leaderzhangyi.github.io/python.html" title="Python单线程爬取QQ空间说说存入MySQL并生成词云（超详细讲解，踩坑经历）">https://leaderzhangyi.github.io/python.html</a> &nbsp;&nbsp;&nbsp;&nbsp;<span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://leaderzhangyi.github.io/python.html" aria-label="复制成功！"></i></span>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！ </li>
@@ -748,26 +758,6 @@
       
       
 
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/Hexo个人博客搭建.html" rel="next" title="Hexo+github 建站">
-                <i class="fa fa-chevron-left"></i> Hexo+github 建站
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/测试.html" rel="prev" title="分类、tags测试">
-                分类、tags测试 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
       
 
       
@@ -841,56 +831,14 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-count">1</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
               
 
               
-                
-                
-                <div class="site-state-item site-state-categories">
-                  
-                    
-                      <a href="/categories">
-                    
-                  
-                    
-                    
-                      
-                    
-                    <span class="site-state-item-count">1</span>
-                    <span class="site-state-item-name">分类</span>
-                  </a>
-                </div>
-              
 
-              
-                
-                
-                <div class="site-state-item site-state-tags">
-                  
-                    
-                      <a href="/tags/">
-                    
-                  
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">5</span>
-                    <span class="site-state-item-name">标签</span>
-                  </a>
-                </div>
               
             </nav>
           
@@ -1709,7 +1657,7 @@ show_date_time();
   
       <script type="text/javascript" src="/js/src/clicklove.js"></script>
   
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/node_modules/live2d-widget-model-shizuku/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body>
 
 
 </html>
