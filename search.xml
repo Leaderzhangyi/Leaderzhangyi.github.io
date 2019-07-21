@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[币值转换（模拟）]]></title>
+    <url>%2F%E5%B8%81%E5%80%BC%E8%BD%AC%E6%8D%A2.html</url>
+    <content type="text"><![CDATA[7-23 币值转换 (20 分) 输入一个整数（位数不超过9位）代表一个人民币值（单位为元），请转换成财务要求的大写中文格式。如23108元，转换后变成“贰万叁仟壹百零捌”元。为了简化输出，用小写英文字母a-j顺序代表大写数字0-9，用S、B、Q、W、Y分别代表拾、百、仟、万、亿。于是23108元应被转换输出为“cWdQbBai”元。 输入格式：输入在一行中给出一个不超过9位的非负整数。 输出格式：在一行中输出转换后的结果。注意“零”的用法必须符合中文习惯。 输入样例1：813227345输出样例1：iYbQdBcScWhQdBeSf输入样例2：6900输出样例2：gQjB 作者: 陈建海 单位: 浙江大学 时间限制: 400 ms 内存限制: 64 MB 代码长度限制: 16 KB 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354#include&lt;stdio.h&gt;int main ()&#123; int n, initial_n; scanf("%d", &amp;n); initial_n = n; // 保留初始值 char num[10] = &#123;'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'&#125;; char unit[10] = &#123;0, 0, 'S', 'B', 'Q', 'W', 'S', 'B', 'Q', 'Y'&#125;;//舍弃前两位 char result[17]= &#123;0&#125;; // 9 位数最多有 17 位输出 int i, last_i = n % 10; int j = 0; int count_n = 0; while (n &gt; 0) &#123; i = n % 10; n /= 10; count_n ++; if (i == 0 &amp;&amp; (count_n % 4) &gt; 1) // 从十位开始统计（个位0永远不输出） &#123; if (last_i != 0) // 如果前一位不等于 0，那就输出这个 0 &#123; result[j++] = num[i]; &#125; &#125; if (count_n == 5 &amp;&amp; i == 0 &amp;&amp; initial_n &lt; 100000000) &#123; result[j++] = unit[count_n]; // 万 w 是一定要输出的 &#125; if (count_n &gt; 1 &amp;&amp; i != 0) // 非 0 不输出单位 &#123; result[j++] = unit[count_n]; &#125; if (i != 0) // 处理非 0 数的输出 &#123; result[j++] = num[i]; &#125; last_i = i; //保留 i 的前一位的值 用于处理 0 &#125; if (initial_n == 0) // 处理特殊值 0 &#123; result[j++] = num[i]; &#125; for (j=j-1; j&gt;=0; j--) &#123; printf("%c", result[j]); &#125; printf("\n"); return 0;&#125;]]></content>
+      <categories>
+        <category>算法</category>
+        <category>模拟</category>
+      </categories>
+      <tags>
+        <tag>ACM</tag>
+        <tag>模拟</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Linux(redhat)安装gcc环境]]></title>
     <url>%2FLinux(redhat)%E5%AE%89%E8%A3%85gcc%E7%8E%AF%E5%A2%83%EF%BC%88%E8%B6%85%E8%AF%A6%E7%BB%86%E8%AE%B2%E8%A7%A3%EF%BC%8C%E9%92%88%E5%AF%B9%E5%B0%8F%E7%99%BD%EF%BC%8C%E8%B8%A9%E5%9D%91%E7%BB%8F%E5%8E%86%EF%BC%89.html</url>
     <content type="text"><![CDATA[前言：看来网上许多博客都是抄来抄去的基本一个样，还有许多坑，现在博主就来详细的介绍如何从无到有的在你的Linux环境里安装上gcc 注意:在配置gcc之前先把虚拟机的开机顺序调整正确！！！ 话不多说见图：如果不能点击就先关闭虚拟机在进行设置 现在开始 1.（先完成最上面那步再来做第一步）点击最上面的设备–&gt;分配光驱–&gt;选择你自己当前系统的.iso镜像文件选择好以后你桌面上就有一个光驱 2.开始进行挂载1）挂载光盘 123cd /mntmkdir cdrommount /dev/cdrom /mnt/cdrom 2）进入软件包目录 123cd /mnt/cdrom/Packagesls –la gcc*.*rpm –ivh gcc-4.4.7-3.el6.i686.rpm // 这里大家安装自己的版本(输入前几个关键字母后就用table键补齐) 不一定是我这写的版本 然后Enter进行安装，如果这安装出现问题不用管，直接进入第三步安装 3.安装以下rpm包 （从上到下依次安装，顺序一定不能乱！！）安装的时候名字不用全打,打了前面几个字母按table自动补全 注意：安装包的时候一定要根据自己包的版本安装，利用table键补齐。如果存在包的依赖关系报错的话，就先检查顺序是否正确，安装包的时候最好安装x84_64结尾的包 注意天坑: 在安装第4个rpm包的时候如果有图中红框的一定要选择图中方框这个包，不然后续会找不到对应的环境，如果没有的这个包的话还是安装i686.rpm结尾的！！！！ 12345678rpm -ivh kernel-headers-2.6.32-358.el6.i686.rpm rpm -ivh glibc-headers-2.12-1.107.el6.i686.rpm rpm -ivh glibc-devel-2.12-1.107.el6.i686.rpm rpm -ivh mpfr-2.4.1-6.el6.i686.rpm（依赖libmpfr.so.1） rpm -ivh cpp-4.4.7-3.el6.i686.rpm rpm -ivh ppl-0.10.2-11.el6.i686.rpm（依赖libppl.so.7和libppl_c.so.2）rpm -ivh cloog-ppl-0.15.7-1.2.el6.i686.rpm rpm -ivh gcc-4.4.7-3.el6.i686.rpm 4.安装好以后随便在一个文件夹中进行测试看是否成功我这是在根目录下面建了一个test文件夹 vim word.c进行编辑 在用gcc运行 大功告成，安装gcc成功，如果本文有什么错误或者知识点的遗漏欢迎大家指出！]]></content>
