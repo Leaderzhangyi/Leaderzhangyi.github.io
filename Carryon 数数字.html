@@ -304,7 +304,7 @@
       
     
 
-    <a href="/categories" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">8</span></a>
+    <a href="/categories" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">9</span></a>
 
   </li>
         
@@ -322,7 +322,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">7</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">8</span></a>
 
   </li>
         
@@ -610,14 +610,12 @@
 <p>思路：</p>
 <ul>
 <li>先看范围1~1e12  用普通for循环肯定超时，就要想怎么缩小范围，我们就先看取余</li>
-<li>来看看为什么这里优化是 $c = a + (b - a)%15$</li>
+<li>来看看为什么这里优化是 $c = a + (b - a)\%15$</li>
 <li>因为最后也要对15求余，我们就先对范围内取余来达到缩小范围这样也会保证结果相同以致不会超时<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> sys.stdin:</span><br><span class="line">    line = line.strip()</span><br><span class="line">    a, b = map(int, line.split())</span><br><span class="line">    str = <span class="string">""</span></span><br><span class="line">    res = <span class="string">""</span></span><br><span class="line">    c = a + (b - a) % <span class="number">15</span>  <span class="comment"># 先求个余  缩小范围</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(a, c + <span class="number">1</span>):</span><br><span class="line">        str += hex(i)  <span class="comment"># 每次加每个数的16进制</span></span><br><span class="line">    str = str.replace(<span class="string">'0x'</span>, <span class="string">''</span>)  <span class="comment"># 替换0x无用字符</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(a, b + <span class="number">1</span>):</span><br><span class="line">        ans = hex(i)</span><br><span class="line">        res += ans</span><br><span class="line">    res = res.replace(<span class="string">'0x'</span>, <span class="string">''</span>)</span><br><span class="line"></span><br><span class="line">    print(<span class="string">"优化前:"</span> + res)</span><br><span class="line">    print(<span class="string">"优化后:"</span> + str)</span><br><span class="line">    print(int(str, <span class="number">16</span>) % <span class="number">15</span>)  <span class="comment"># 再从16进制转10进制取余</span></span><br></pre></td></tr></table></figure>
-
 </li>
 </ul>
 <p>看下结果</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> <span class="number">16</span></span><br><span class="line">优化前:<span class="number">123456789</span>abcdef10</span><br><span class="line">优化后:<span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="number">1</span> <span class="number">99</span></span><br><span class="line">优化前:<span class="number">123456789</span>abcdef101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f60616263</span><br><span class="line">优化后:<span class="number">123456789</span></span><br><span class="line"><span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="number">10</span> <span class="number">14</span></span><br><span class="line">优化前:abcde</span><br><span class="line">优化后:abcde</span><br><span class="line"><span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="number">2</span> <span class="number">21</span></span><br><span class="line">优化前:<span class="number">23456789</span>abcdef101112131415</span><br><span class="line">优化后:<span class="number">23456</span></span><br><span class="line"><span class="number">5</span></span><br></pre></td></tr></table></figure>
-
 <hr>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> sys.stdin:</span><br><span class="line">    line = line.strip()</span><br><span class="line">    a,b= line.split()</span><br><span class="line">    str = <span class="string">""</span></span><br><span class="line">    c = int(a) + (int(b)-int(a)) % <span class="number">15</span>    <span class="comment">#  先求个余  缩小范围</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(int(a), int(c)+<span class="number">1</span>):</span><br><span class="line">        str += hex(i)                   <span class="comment">#  每次加每个数的16进制</span></span><br><span class="line">    str = str.replace(<span class="string">'0x'</span>, <span class="string">''</span>)          <span class="comment">#  替换0x无用字符</span></span><br><span class="line">    print(int(str, <span class="number">16</span>) % <span class="number">15</span>)            <span class="comment"># 再从16进制转10进制取余</span></span><br></pre></td></tr></table></figure>
       
@@ -632,14 +630,14 @@
     <li class="popular-posts-item">
       
       
-      <div class="popular-posts-title"><a href="\爬楼梯dfs.html" rel="bookmark">爬楼梯问题路径保存及输出（DFS小白练习）</a></div>
+      <div class="popular-posts-title"><a href="\简单的询问.html" rel="bookmark">简单的询问（延时标记+差分）</a></div>
       
     </li>
   
     <li class="popular-posts-item">
       
       
-      <div class="popular-posts-title"><a href="\简单的询问.html" rel="bookmark">简单的询问（延时标记+差分）</a></div>
+      <div class="popular-posts-title"><a href="\爬楼梯dfs.html" rel="bookmark">爬楼梯问题路径保存及输出（DFS小白练习）</a></div>
       
     </li>
   
@@ -865,7 +863,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-count">8</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -898,7 +896,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">8</span>
+                      
+                    
+                    <span class="site-state-item-count">9</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1141,7 +1141,7 @@ show_date_time();
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">本站大概16k字</span>
+    <span title="站点总字数">本站大概23k字</span>
   
 
   
@@ -1150,7 +1150,7 @@ show_date_time();
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">阅读本站≈14 分钟</span>
+    <span title="站点阅读时长">阅读本站≈21 分钟</span>
   
 </div>
 
@@ -1160,8 +1160,12 @@ show_date_time();
 
 
 
-
-
+  <script src="https://unpkg.com/mermaid@/dist/mermaid.min.js"></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize("");
+    }
+  </script>
 
 
         
@@ -1660,10 +1664,37 @@ show_date_time();
   
 
   
+  
+
+  
+  
+
+  
+
 
   
 
   
+<script>
+if ($('body').find('pre.mermaid').length) {
+  $.ajax({
+    type: 'GET',
+    url: '//cdnjs.cloudflare.com/ajax/libs/mermaid/8.0.0/mermaid.min.js',
+    dataType: 'script',
+    cache: true,
+    success: function() {
+      mermaid.initialize({
+        theme: 'forest',
+        logLevel: 3,
+        flowchart: { curve: 'linear' },
+        gantt: { axisFormat: '%m/%d/%Y' },
+        sequence: { actorMargin: 50 }
+      });
+    }
+  });
+}
+</script>
+
 
   
   <script>

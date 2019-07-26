@@ -304,7 +304,7 @@
       
     
 
-    <a href="/categories" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">8</span></a>
+    <a href="/categories" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">9</span></a>
 
   </li>
         
@@ -322,7 +322,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">7</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">8</span></a>
 
   </li>
         
@@ -595,15 +595,16 @@
       
         <h1 id="整数分解为若干项之和-DFS小白入门"><a href="#整数分解为若干项之和-DFS小白入门" class="headerlink" title="整数分解为若干项之和(DFS小白入门)"></a><span class="exturl" data-url="aHR0cHM6Ly9waW50aWEuY24vcHJvYmxlbS1zZXRzLzE0L3Byb2JsZW1zLzI5OTA=" title="https://pintia.cn/problem-sets/14/problems/2990">整数分解为若干项之和(DFS小白入门)<i class="fa fa-external-link"></i></span></h1><p>将一个正整数N分解成几个正整数相加，可以有多种分解方法，例如7=6+1，7=5+2，7=5+1+1，…。编程求出正整数N的所有整数分解式子。</p>
 <h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>每个输入包含一个测试用例，即正整数N (0&lt;N≤30)。</p>
-<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>按递增顺序输出N的所有整数分解式子。递增顺序是指：对于两个分解序列<em>N</em>1={<em>n</em>1,<em>n</em>2,⋯}和<em>N</em>2={<em>m</em>1,<em>m</em>2,⋯}，若存在<em>i</em>使得<em>n</em>1=<em>m</em>1,⋯,<em>n**i</em>=<em>m<strong>i<em>，但是</em>n</strong>i</em>+1&lt;<em>m**i</em>+1,则<em>N</em>1序列必定在<em>N</em>2序列之前输出。每个式子由小到大相加，式子间用分号隔开，且每输出4个式子后换行。</p>
-<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><pre><code>7</code></pre><h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><pre><code>7=1+1+1+1+1+1+1;7=1+1+1+1+1+2;7=1+1+1+1+3;7=1+1+1+2+2
+<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>按递增顺序输出N的所有整数分解式子。递增顺序是指：对于两个分解序列<em>N</em>1={<em>n</em>1,<em>n</em>2,⋯}和<em>N</em>2={<em>m</em>1,<em>m</em>2,⋯}，若存在<em>i</em>使得<em>n</em>1=<em>m</em>1,⋯,<em>n**i</em>=<em>m**i</em>，但是<em>n**i</em>+1&lt;<em>m**i</em>+1,则<em>N</em>1序列必定在<em>N</em>2序列之前输出。每个式子由小到大相加，式子间用分号隔开，且每输出4个式子后换行。</p>
+<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><pre><code>7
+</code></pre><h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><pre><code>7=1+1+1+1+1+1+1;7=1+1+1+1+1+2;7=1+1+1+1+3;7=1+1+1+2+2
 7=1+1+1+4;7=1+1+2+3;7=1+1+5;7=1+2+2+2
 7=1+2+4;7=1+3+3;7=1+6;7=2+2+3
-7=2+5;7=3+4;7=7</code></pre><hr>
+7=2+5;7=3+4;7=7
+</code></pre><hr>
 <p>看这种多种情况并且多种分解的 首先就要想到树</p>
 <p>发现多种情况，和全排列有点像，果断DFS</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAX 500</span></span><br><span class="line"><span class="keyword">int</span> a[MAX];</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="keyword">int</span> cnt = <span class="number">0</span>,sum = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> k = <span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">DFS</span><span class="params">(<span class="keyword">int</span> step)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(sum == n) <span class="comment">// 总和与输入值相等时，进行输出</span></span><br><span class="line">    &#123;</span><br><span class="line">        k++;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d="</span>,n);</span><br><span class="line">        <span class="keyword">if</span>(k%<span class="number">4</span> == <span class="number">0</span> || a[cnt<span class="number">-1</span>] == n) <span class="comment">// 对格式进行适当的调整</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i&lt;cnt; i++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">"%d%c"</span>,a[i],i==cnt<span class="number">-1</span>?<span class="string">'\n'</span>:<span class="string">'+'</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(k%<span class="number">4</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i&lt;cnt; i++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">"%d%c"</span>,a[i],i==cnt<span class="number">-1</span>?<span class="string">';'</span>:<span class="string">'+'</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(sum &gt; n)</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = step; i&lt;=n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        a[cnt++] = i;</span><br><span class="line">        sum += i;</span><br><span class="line">        DFS(i);   <span class="comment">// 遍历下一个节点</span></span><br><span class="line">        sum -= i;<span class="comment">// 回溯为上一个节点 所以要减去i</span></span><br><span class="line">        cnt--; <span class="comment">// 同样回溯</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">    DFS(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 
       
     </div>
@@ -771,6 +772,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/各类基础排序汇总.html" rel="prev" title="各类经典排序汇总(结合视频)">
+                各类经典排序汇总(结合视频) <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -846,7 +851,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-count">8</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -879,7 +884,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">8</span>
+                      
+                    
+                    <span class="site-state-item-count">9</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1122,7 +1129,7 @@ show_date_time();
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">本站大概16k字</span>
+    <span title="站点总字数">本站大概23k字</span>
   
 
   
@@ -1131,7 +1138,7 @@ show_date_time();
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">阅读本站≈14 分钟</span>
+    <span title="站点阅读时长">阅读本站≈21 分钟</span>
   
 </div>
 
@@ -1141,8 +1148,12 @@ show_date_time();
 
 
 
-
-
+  <script src="https://unpkg.com/mermaid@/dist/mermaid.min.js"></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize("");
+    }
+  </script>
 
 
         
@@ -1641,10 +1652,37 @@ show_date_time();
   
 
   
+  
+
+  
+  
+
+  
+
 
   
 
   
+<script>
+if ($('body').find('pre.mermaid').length) {
+  $.ajax({
+    type: 'GET',
+    url: '//cdnjs.cloudflare.com/ajax/libs/mermaid/8.0.0/mermaid.min.js',
+    dataType: 'script',
+    cache: true,
+    success: function() {
+      mermaid.initialize({
+        theme: 'forest',
+        logLevel: 3,
+        flowchart: { curve: 'linear' },
+        gantt: { axisFormat: '%m/%d/%Y' },
+        sequence: { actorMargin: 50 }
+      });
+    }
+  });
+}
+</script>
+
 
   
   <script>

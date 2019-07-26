@@ -120,18 +120,17 @@
   daovoice('update');
   </script>
 
-  <meta name="description" content="404                                                                                                                                                                 L2Dwidget.">
-<meta name="keywords" content="ACM,next,hexo,python">
+  <meta name="description" content="&amp;lt;!DOCTYPE html&amp;gt;                          404">
 <meta property="og:type" content="website">
 <meta property="og:title" content="404 Not Found：该页无法显示">
 <meta property="og:url" content="https://zyink.top/404.html">
 <meta property="og:site_name" content="四火的小站">
-<meta property="og:description" content="404                                                                                                                                                                 L2Dwidget.">
+<meta property="og:description" content="&amp;lt;!DOCTYPE html&amp;gt;                          404">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-07-03T07:54:45.935Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="404 Not Found：该页无法显示">
-<meta name="twitter:description" content="404                                                                                                                                                                 L2Dwidget.">
+<meta name="twitter:description" content="&amp;lt;!DOCTYPE html&amp;gt;                          404">
 
 
 
@@ -304,7 +303,7 @@
       
     
 
-    <a href="/categories" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br/>分类<span class="badge">8</span></a>
+    <a href="/categories" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br/>分类<span class="badge">9</span></a>
 
   </li>
         
@@ -322,7 +321,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br/>归档<span class="badge">7</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br/>归档<span class="badge">8</span></a>
 
   </li>
         
@@ -487,7 +486,7 @@
       <div class="post-body">
         
         
-          <!DOCTYPE html>
+          <p>&lt;!DOCTYPE html&gt;</p>
 <html>
     <head><meta name="generator" content="Hexo 3.9.0">
          <meta charset="UTF-8">
@@ -555,7 +554,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-count">8</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -588,7 +587,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">8</span>
+                      
+                    
+                    <span class="site-state-item-count">9</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -814,7 +815,7 @@ show_date_time();
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">本站大概16k字</span>
+    <span title="站点总字数">本站大概23k字</span>
   
 
   
@@ -823,7 +824,7 @@ show_date_time();
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">阅读本站≈14 分钟</span>
+    <span title="站点阅读时长">阅读本站≈21 分钟</span>
   
 </div>
 
@@ -833,8 +834,12 @@ show_date_time();
 
 
 
-
-
+  <script src='https://unpkg.com/mermaid@/dist/mermaid.min.js'></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize("");
+    }
+  </script>
 
 
         
@@ -1313,10 +1318,37 @@ show_date_time();
   
 
   
+  
+
+  
+  
+
+  
+
 
   
 
   
+<script>
+if ($('body').find('pre.mermaid').length) {
+  $.ajax({
+    type: 'GET',
+    url: '//cdnjs.cloudflare.com/ajax/libs/mermaid/8.0.0/mermaid.min.js',
+    dataType: 'script',
+    cache: true,
+    success: function() {
+      mermaid.initialize({
+        theme: 'forest',
+        logLevel: 3,
+        flowchart: { curve: 'linear' },
+        gantt: { axisFormat: '%m/%d/%Y' },
+        sequence: { actorMargin: 50 }
+      });
+    }
+  });
+}
+</script>
+
 
   
   <script>

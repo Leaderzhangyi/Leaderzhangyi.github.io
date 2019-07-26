@@ -304,7 +304,7 @@
       
     
 
-    <a href="/categories" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">8</span></a>
+    <a href="/categories" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">9</span></a>
 
   </li>
         
@@ -322,7 +322,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">7</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">8</span></a>
 
   </li>
         
@@ -596,7 +596,11 @@
         <h1 id="7-23-币值转换-20-分"><a href="#7-23-币值转换-20-分" class="headerlink" title="7-23 币值转换 (20 分)"></a><span class="exturl" data-url="aHR0cHM6Ly9waW50aWEuY24vcHJvYmxlbS1zZXRzLzE0L3Byb2JsZW1zLzgwMw==" title="https://pintia.cn/problem-sets/14/problems/803">7-23 币值转换 (20 分)<i class="fa fa-external-link"></i></span></h1><p>  输入一个整数（位数不超过9位）代表一个人民币值（单位为元），请转换成财务要求的大写中文格式。如23108元，转换后变成“贰万叁仟壹百零捌”元。为了简化输出，用小写英文字母a-j顺序代表大写数字0-9，用S、B、Q、W、Y分别代表拾、百、仟、万、亿。于是23108元应被转换输出为“cWdQbBai”元。</p>
 <h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入在一行中给出一个不超过9位的非负整数。</p>
 <h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>在一行中输出转换后的结果。注意“零”的用法必须符合中文习惯。</p>
-<h3 id="输入样例1："><a href="#输入样例1：" class="headerlink" title="输入样例1："></a>输入样例1：</h3><pre><code>813227345</code></pre><h3 id="输出样例1："><a href="#输出样例1：" class="headerlink" title="输出样例1："></a>输出样例1：</h3><pre><code>iYbQdBcScWhQdBeSf</code></pre><h3 id="输入样例2："><a href="#输入样例2：" class="headerlink" title="输入样例2："></a>输入样例2：</h3><pre><code>6900</code></pre><h3 id="输出样例2："><a href="#输出样例2：" class="headerlink" title="输出样例2："></a>输出样例2：</h3><pre><code>gQjB</code></pre><blockquote>
+<h3 id="输入样例1："><a href="#输入样例1：" class="headerlink" title="输入样例1："></a>输入样例1：</h3><pre><code>813227345
+</code></pre><h3 id="输出样例1："><a href="#输出样例1：" class="headerlink" title="输出样例1："></a>输出样例1：</h3><pre><code>iYbQdBcScWhQdBeSf
+</code></pre><h3 id="输入样例2："><a href="#输入样例2：" class="headerlink" title="输入样例2："></a>输入样例2：</h3><pre><code>6900
+</code></pre><h3 id="输出样例2："><a href="#输出样例2：" class="headerlink" title="输出样例2："></a>输出样例2：</h3><pre><code>gQjB
+</code></pre><blockquote>
 <p> 作者: 陈建海</p>
 <p>单位: 浙江大学</p>
 <p>时间限制: 400 ms</p>
@@ -605,7 +609,6 @@
 </blockquote>
 <hr>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n, initial_n;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">    initial_n = n; <span class="comment">// 保留初始值</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">char</span> num[<span class="number">10</span>] = &#123;<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>, <span class="string">'f'</span>, <span class="string">'g'</span>, <span class="string">'h'</span>, <span class="string">'i'</span>, <span class="string">'j'</span>&#125;;</span><br><span class="line">    <span class="keyword">char</span> unit[<span class="number">10</span>] = &#123;<span class="number">0</span>, <span class="number">0</span>, <span class="string">'S'</span>, <span class="string">'B'</span>, <span class="string">'Q'</span>, <span class="string">'W'</span>, <span class="string">'S'</span>, <span class="string">'B'</span>, <span class="string">'Q'</span>, <span class="string">'Y'</span>&#125;;<span class="comment">//舍弃前两位</span></span><br><span class="line">    <span class="keyword">char</span> result[<span class="number">17</span>]= &#123;<span class="number">0</span>&#125;; <span class="comment">// 9 位数最多有 17 位输出</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>, last_i = n % <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">int</span> j = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> count_n = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (n &gt; <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        i = n % <span class="number">10</span>;</span><br><span class="line">        n /= <span class="number">10</span>;</span><br><span class="line">        count_n ++;</span><br><span class="line">        <span class="keyword">if</span> (i == <span class="number">0</span> &amp;&amp; (count_n % <span class="number">4</span>) &gt; <span class="number">1</span>)   <span class="comment">// 从十位开始统计（个位0永远不输出）</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (last_i != <span class="number">0</span>)     <span class="comment">// 如果前一位不等于 0，那就输出这个 0</span></span><br><span class="line">            &#123;</span><br><span class="line">                result[j++]  = num[i];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (count_n == <span class="number">5</span> &amp;&amp; i == <span class="number">0</span> &amp;&amp; initial_n &lt; <span class="number">100000000</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            result[j++] =  unit[count_n]; <span class="comment">// 万 w 是一定要输出的</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (count_n &gt; <span class="number">1</span> &amp;&amp; i != <span class="number">0</span>)      <span class="comment">// 非 0 不输出单位</span></span><br><span class="line">        &#123;</span><br><span class="line">            result[j++] = unit[count_n];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (i != <span class="number">0</span>)                 <span class="comment">// 处理非 0 数的输出</span></span><br><span class="line">        &#123;</span><br><span class="line">            result[j++] = num[i];</span><br><span class="line">        &#125;</span><br><span class="line">        last_i = i; <span class="comment">//保留 i 的前一位的值 用于处理 0</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (initial_n == <span class="number">0</span>)         <span class="comment">// 处理特殊值 0</span></span><br><span class="line">    &#123;</span><br><span class="line">        result[j++]  = num[i];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (j=j<span class="number">-1</span>; j&gt;=<span class="number">0</span>; j--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%c"</span>, result[j]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 
       
     </div>
@@ -619,13 +622,6 @@
     <li class="popular-posts-item">
       
       
-      <div class="popular-posts-title"><a href="\爬楼梯dfs.html" rel="bookmark">爬楼梯问题路径保存及输出（DFS小白练习）</a></div>
-      
-    </li>
-  
-    <li class="popular-posts-item">
-      
-      
       <div class="popular-posts-title"><a href="\整数分解为若干项之和.html" rel="bookmark">整数分解为若干项之和(DFS小白入门)</a></div>
       
     </li>
@@ -634,6 +630,13 @@
       
       
       <div class="popular-posts-title"><a href="\简单的询问.html" rel="bookmark">简单的询问（延时标记+差分）</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="\Carryon 数数字.html" rel="bookmark">Carryon 数数字(小米OJ)</a></div>
       
     </li>
   
@@ -852,7 +855,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-count">8</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -885,7 +888,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">8</span>
+                      
+                    
+                    <span class="site-state-item-count">9</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1128,7 +1133,7 @@ show_date_time();
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">本站大概16k字</span>
+    <span title="站点总字数">本站大概23k字</span>
   
 
   
@@ -1137,7 +1142,7 @@ show_date_time();
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">阅读本站≈14 分钟</span>
+    <span title="站点阅读时长">阅读本站≈21 分钟</span>
   
 </div>
 
@@ -1147,8 +1152,12 @@ show_date_time();
 
 
 
-
-
+  <script src="https://unpkg.com/mermaid@/dist/mermaid.min.js"></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize("");
+    }
+  </script>
 
 
         
@@ -1647,10 +1656,37 @@ show_date_time();
   
 
   
+  
+
+  
+  
+
+  
+
 
   
 
   
+<script>
+if ($('body').find('pre.mermaid').length) {
+  $.ajax({
+    type: 'GET',
+    url: '//cdnjs.cloudflare.com/ajax/libs/mermaid/8.0.0/mermaid.min.js',
+    dataType: 'script',
+    cache: true,
+    success: function() {
+      mermaid.initialize({
+        theme: 'forest',
+        logLevel: 3,
+        flowchart: { curve: 'linear' },
+        gantt: { axisFormat: '%m/%d/%Y' },
+        sequence: { actorMargin: 50 }
+      });
+    }
+  });
+}
+</script>
+
 
   
   <script>
