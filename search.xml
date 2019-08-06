@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[01机器学习入门--特征抽取]]></title>
+    <url>%2Fscikit-learn%E5%AD%A6%E4%B9%A0.html</url>
+    <content type="text"><![CDATA[01机器学习入门—特征抽取8月了。。这几天也是边干活边学习机器学习，空余时间我还是想把这些记录下来 这里我就记录3个方法 字典特征值抽取123456789DictVectorizer(sparse=True,..)DictVectorizer.fit_transform(X) * X: array数组或者sparse矩阵 * 返回值：转换之前的数据格式DictVectorizer.get_feature_names() * 返回类别的名称DictVectorizer.transform(X) * 按照原先的标准转换 文本特征值抽取123456789CountVectorizer() # 返回词频矩阵CountVectorizer.fit_transform(X) * X: 文本或者包含文本字符串的可迭代对象 * 返回值: 返回sparse矩阵CountVectorizer.inverse_transform(X) * X: array数组或者sparse矩阵CountVectoreizer.get_feature_names() * 返回值: 单词列表 Tfidf文本特征抽取分析问题Tf: term frequency —&gt; 词的频率 idf: 逆文档频率inverse document frequency 一下内容来自维基百科 tf-idf（英语：term frequency–inverse document frequency）是一种用于信息检索与文本挖掘的常用加权技术。tf-idf是一种统计方法，用以评估一字词对于一个文件集或一个语料库中的其中一份文件的重要程度。字词的重要性随着它在文件中出现的次数成正比增加，但同时会随着它在语料库中出现的频率成反比下降。tf-idf加权的各种形式常被搜索引擎应用，作为文件与用户查询之间相关程度的度量或评级。除了tf-idf以外，互联网上的搜索引擎还会使用基于链接分析的评级方法，以确定文件在搜索结果中出现的顺序。 Tf-idf计算公式 ——&gt; lg(总文档数量/该词出现的文档数量) tf-idf的理论依据及不足 tf-idf算法是创建在这样一个假设之上的：对区别文档最有意义的词语应该是那些在文档中出现频率高，而在整个文档集合的其他文档中出现频率少的词语，所以如果特征空间坐标系取tf词频作为测度，就可以体现同类文本的特点。另外考虑到单词区别不同类别的能力，tf-idf法认为一个单词出现的文本频数越小，它区别不同类别文本的能力就越大。因此引入了逆文本频度idf的概念，以tf和idf的乘积作为特征空间坐标系的取值测度，并用它完成对权值tf的调整，调整权值的目的在于突出重要单词，抑制次要单词。但是在本质上idf是一种试图抑制噪声的加权，并且单纯地认为文本频率小的单词就越重要，文本频率大的单词就越无用，显然这并不是完全正确的。idf的简单结构并不能有效地反映单词的重要程度和特征词的分布情况，使其无法很好地完成对权值调整的功能，所以tf-idf法的精度并不是很高。 此外，在tf-idf算法中并没有体现出单词的位置信息，对于Web文档而言，权重的计算方法应该体现出HTML的结构特征。特征词在不同的标记符中对文章内容的反映程度不同，其权重的计算方法也应不同。因此应该对于处于网页不同位置的特征词分别赋予不同的系数，然后乘以特征词的词频，以提高文本表示的效果。 例子1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465# examplefrom sklearn.feature_extraction import DictVectorizerfrom sklearn.feature_extraction.text import CountVectorizer,TfidfVectorizerimport jiebadef WordCut(): """ 中文分词 """ con = jieba.cut("人生苦短,我用python,人生漫长,我不用python") # 转为列表 content = list(con) # 列表转为字符串，忽略空格字符等 c = ' '.join(content) return c def DictVec(): ''' 字典特征抽取 sparse矩阵 节约内存，方便读取处理 ''' dict = DictVectorizer(sparse=False) data = dict.fit_transform([&#123;"city":"北京","PM2.5":123&#125;,&#123;"city":"成都","PM2.5":5&#125;]) print(dict.get_feature_names()) print(data) return None def CountVec(): """ 文本特征值抽取 对于单个字母不进行统计，没有分类依据 """ cv = CountVectorizer() # 没有sparse矩阵调节参数# data = cv.fit_transform(["Life is short,i like python","life is long,i dislike python"])# data = cv.fit_transform(["人生苦短,我用python","人生漫长,我不用python"]) # 无法对中文进行准确的抽取 # 先要自行进行分词(可以加空格或用jieba) ans = WordCut() print(ans) data = cv.fit_transform([ans]) print(cv.get_feature_names()) print(data.toarray()) # 通过toarray()方法进行转化 def tfidfVec(): """ 文本特征值抽取 对于单个字母不进行统计，没有分类依据 """ cv = TfidfVectorizer() ans = WordCut() print(ans) data = cv.fit_transform([ans]) print(cv.get_feature_names()) print(data.toarray()) # 通过toarray()方法进行转化 if __name__ == "__main__": DictVec() CountVec() tfidfVec()]]></content>
+      <categories>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>特征值处理</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Git基本使用方法(小白)]]></title>
     <url>%2Fgit.html</url>
     <content type="text"><![CDATA[Github大型同性交友网站，连git都不会怎么快乐呢♂？不多说废话，看图 上面是不是太长了。。。别慌 下面还有一张 如果这些还不够用去我的频道收看git简明使用教程]]></content>
