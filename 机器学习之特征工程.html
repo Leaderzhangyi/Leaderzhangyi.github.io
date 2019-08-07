@@ -124,11 +124,11 @@
 <meta name="keywords" content="特征值处理">
 <meta property="og:type" content="article">
 <meta property="og:title" content="01机器学习入门--特征抽取">
-<meta property="og:url" content="https://zyink.top/scikit-learn学习.html">
+<meta property="og:url" content="https://zyink.top/机器学习之特征工程.html">
 <meta property="og:site_name" content="四火的小站">
 <meta property="og:description" content="01机器学习入门—特征抽取8月了。。这几天也是边干活边学习机器学习，空余时间我还是想把这些记录下来 这里我就记录3个方法 字典特征值抽取123456789DictVectorizer(sparse=True,..)DictVectorizer.fit_transform(X) * X: array数组或者sparse矩阵 * 返回值：转换之前的数据格式DictVectorizer.get_feat">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-06T15:44:30.201Z">
+<meta property="og:updated_time" content="2019-08-07T09:35:38.338Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="01机器学习入门--特征抽取">
 <meta name="twitter:description" content="01机器学习入门—特征抽取8月了。。这几天也是边干活边学习机器学习，空余时间我还是想把这些记录下来 这里我就记录3个方法 字典特征值抽取123456789DictVectorizer(sparse=True,..)DictVectorizer.fit_transform(X) * X: array数组或者sparse矩阵 * 返回值：转换之前的数据格式DictVectorizer.get_feat">
@@ -139,7 +139,7 @@
 
   
   
-  <link rel="canonical" href="https://zyink.top/scikit-learn学习">
+  <link rel="canonical" href="https://zyink.top/机器学习之特征工程">
 
 
 
@@ -446,7 +446,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zyink.top/scikit-learn学习.html">
+    <link itemprop="mainEntityOfPage" href="https://zyink.top/机器学习之特征工程.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Z.lnk">
@@ -501,13 +501,23 @@
                 
               
 
-              <time title="创建时间：2019-08-06 13:03:19 / 修改时间：23:44:30" itemprop="dateCreated datePublished" datetime="2019-08-06T13:03:19+08:00">2019-08-06</time>
+              <time title="创建时间：2019-08-06 13:03:19" itemprop="dateCreated datePublished" datetime="2019-08-06T13:03:19+08:00">2019-08-06</time>
             </span>
           
 
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-08-07 17:35:38" itemprop="dateModified" datetime="2019-08-07T17:35:38+08:00">2019-08-07</time>
+              </span>
             
           
 
@@ -555,7 +565,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span title="本文字数">2.8k</span>
+              <span title="本文字数">5.8k</span>
             </span>
           
 
@@ -567,7 +577,7 @@
               
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               
-              <span title="阅读时长">3 分钟</span>
+              <span title="阅读时长">5 分钟</span>
             </span>
           
 
@@ -605,6 +615,99 @@
 </blockquote>
 <hr>
 <h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># example</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> sklearn.feature_extraction <span class="keyword">import</span> DictVectorizer</span><br><span class="line"><span class="keyword">from</span> sklearn.feature_extraction.text <span class="keyword">import</span> CountVectorizer,TfidfVectorizer</span><br><span class="line"><span class="keyword">import</span> jieba</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">WordCut</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">        中文分词</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    con = jieba.cut(<span class="string">"人生苦短,我用python,人生漫长,我不用python"</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 转为列表</span></span><br><span class="line">    content = list(con)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 列表转为字符串，忽略空格字符等</span></span><br><span class="line">    c = <span class="string">' '</span>.join(content)</span><br><span class="line">    <span class="keyword">return</span> c</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">DictVec</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">'''</span></span><br><span class="line"><span class="string">        字典特征抽取</span></span><br><span class="line"><span class="string">        sparse矩阵 节约内存，方便读取处理</span></span><br><span class="line"><span class="string">    '''</span></span><br><span class="line">    dict = DictVectorizer(sparse=<span class="literal">False</span>)</span><br><span class="line">    data = dict.fit_transform([&#123;<span class="string">"city"</span>:<span class="string">"北京"</span>,<span class="string">"PM2.5"</span>:<span class="number">123</span>&#125;,&#123;<span class="string">"city"</span>:<span class="string">"成都"</span>,<span class="string">"PM2.5"</span>:<span class="number">5</span>&#125;])</span><br><span class="line">    print(dict.get_feature_names())</span><br><span class="line">    print(data)</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">    </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">CountVec</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">        文本特征值抽取</span></span><br><span class="line"><span class="string">        对于单个字母不进行统计，没有分类依据</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    cv = CountVectorizer()  <span class="comment"># 没有sparse矩阵调节参数</span></span><br><span class="line"><span class="comment">#     data = cv.fit_transform(["Life is short,i like python","life is long,i dislike python"])</span></span><br><span class="line"><span class="comment">#     data = cv.fit_transform(["人生苦短,我用python","人生漫长,我不用python"]) </span></span><br><span class="line">    <span class="comment"># 无法对中文进行准确的抽取</span></span><br><span class="line">    <span class="comment"># 先要自行进行分词(可以加空格或用jieba)</span></span><br><span class="line">    ans = WordCut()</span><br><span class="line">    print(ans)</span><br><span class="line">    data = cv.fit_transform([ans])</span><br><span class="line">    print(cv.get_feature_names())</span><br><span class="line">    print(data.toarray()) <span class="comment"># 通过toarray()方法进行转化</span></span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">tfidfVec</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">        文本特征值抽取</span></span><br><span class="line"><span class="string">        对于单个字母不进行统计，没有分类依据</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    cv = TfidfVectorizer()</span><br><span class="line">    ans = WordCut()</span><br><span class="line">    print(ans)</span><br><span class="line">    data = cv.fit_transform([ans])</span><br><span class="line">    print(cv.get_feature_names())</span><br><span class="line">    print(data.toarray()) <span class="comment"># 通过toarray()方法进行转化</span></span><br><span class="line">    </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    DictVec()</span><br><span class="line">    CountVec()</span><br><span class="line">    tfidfVec()</span><br></pre></td></tr></table></figure>
+<p>但这些远不够，<strong>特征处理</strong>是什么？</p>
+<blockquote>
+<p>通过特定的统计方法(数学方法)将数据转换成算法要求的数据</p>
+</blockquote>
+<p>这里我们可以分成几大类</p>
+<p><strong>数值型数据：</strong></p>
+<p>标准缩放：API  —&gt;  sklearn. preprocessing </p>
+<pre><code>                1. 归一化
+                   2. 标准化
+                   3. 缺失值
+</code></pre><p><strong>类别型数据：</strong>one-hot编码</p>
+<p><strong>时间类型：</strong>时间的切分 （pandas）</p>
+<h3 id="归一化"><a href="#归一化" class="headerlink" title="归一化"></a>归一化</h3><font color="#FF0000">**特点:**</font>通过对原始数据进行变换把数据映射到（默认为[0,1]）之间
+
+
+$$
+𝑋^′ =  \frac{𝑥−𝑚𝑖𝑛}{𝑚𝑎𝑥−𝑚𝑖𝑛} 
+\\
+\\
+𝑋^′′ = 𝑋^′∗(𝑚𝑥−𝑚i)+𝑚i
+$$
+**Ps：**注：作用于每一列，max为一列的最大值，min为一列的最小值,那么X’’为最终结果，mx，mi分别为指定区间值默认mx为1,mi为0
+
+那为什么我们要做这些处理呢？见下方案例
+
+![](https://ae01.alicdn.com/kf/Hbd4449186e7d469e87f603f22a860a9dS.png)
+
+如果单从这三种数据来相亲肯定是不公平的
+
+我们进行下计算  
+$$
+(72993-35948)^2+(10.141740-6830792)^2+(1.032955-1.213192)^2
+$$
+
+
+我们可以清晰的发现，里程数几乎占了总体指数的全部，所以我们要进行标准缩放
+
+**核心目的：**<font color="#FF0000">**其实就是让某一个特征对最终结果不会造成更大的影响**</font>
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">MinMaxScaler(feature_range(<span class="number">0</span>,<span class="number">1</span>)...)</span><br><span class="line">* 每个特征缩放到给定范围(默认[<span class="number">0</span>,<span class="number">1</span>])</span><br><span class="line"></span><br><span class="line">MinMaxScaler.fit_transform(X)</span><br><span class="line">* X：numpy array 格式的数据[n_samples,n_features]</span><br><span class="line">* 返回值：转换后的形状相同的array</span><br></pre></td></tr></table></figure>
+<p>归一化步骤：</p>
+<ol>
+<li>实例化MinMaxScalar</li>
+<li>通过fit_transform转换</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> MinMaxScaler</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">MM</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    进行归一化</span></span><br><span class="line"><span class="string">    :return:None</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    mm = MinMaxScaler(feature_range=(<span class="number">2</span>, <span class="number">3</span>))  <span class="comment"># 返回2-3</span></span><br><span class="line">    data = mm.fit_transform([[<span class="number">90</span>, <span class="number">2</span>, <span class="number">10</span>, <span class="number">40</span>], [<span class="number">60</span>, <span class="number">4</span>, <span class="number">15</span>, <span class="number">45</span>], [<span class="number">75</span>, <span class="number">3</span>, <span class="number">13</span>, <span class="number">46</span>]])</span><br><span class="line">    print(data)</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    MM();</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">结果： [[<span class="number">3.</span>         <span class="number">2.</span>         <span class="number">2.</span>         <span class="number">2.</span>        ]</span><br><span class="line"> [<span class="number">2.</span>         <span class="number">3.</span>         <span class="number">3.</span>         <span class="number">2.83333333</span>]</span><br><span class="line"> [<span class="number">2.5</span>        <span class="number">2.5</span>        <span class="number">2.6</span>        <span class="number">3.</span>        ]]</span><br></pre></td></tr></table></figure>
+<p><strong>Ps：</strong>特定场景下最大值最小值是变化的，另外，最大值与最小值非常<font color="#ff0000">容易受异常点影响</font>，所以这种方法<strong>鲁棒性</strong>（稳定性）较差，只适合传统精确小数据场景。</p>
+<p>所以引入标准化</p>
+<hr>
+<h3 id="标准化"><a href="#标准化" class="headerlink" title="标准化"></a>标准化</h3><ul>
+<li><p>特点：通过对原始数据进行变化把数据变化到均值为0，方差为1的范围内</p>
+</li>
+<li><p>公式：</p>
+<script type="math/tex; mode=display">
+X' = \frac{x-mean}{𝜎}</script></li>
+</ul>
+<ul>
+<li><strong>注：</strong>作用于每一列，mean为平均值，σ为标准差(考量数据的稳定性)</li>
+</ul>
+<blockquote>
+<p><strong>对于归一化来说：</strong>如果出现异常点，影响了最大值和最小值，那么结果显然会发生改变</p>
+<p><strong>对于标准化来说：</strong>如果出现异常点，由于具有一定数据量，少量的异常点对于平均值的影响并不大，从而方差改变较小。</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">StandardScaler(…)</span><br><span class="line"><span class="comment"># 处理之后每列来说所有数据都聚集在均值0附近方差为1</span></span><br><span class="line"></span><br><span class="line">* StandardScaler.fit_transform(X,y)       </span><br><span class="line"><span class="comment">#X:numpy array格式的数据[n_samples,n_features]</span></span><br><span class="line"><span class="comment">#返回值：转换后的形状相同的array</span></span><br><span class="line"></span><br><span class="line">* StandardScaler.mean_</span><br><span class="line"><span class="comment">#原始数据中每列特征的平均值</span></span><br><span class="line"></span><br><span class="line">* StandardScaler.std_</span><br><span class="line"><span class="comment">#原始数据每列特征的方差</span></span><br></pre></td></tr></table></figure>
+<p>应用：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> StandardScaler</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">SS</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    进行标准化</span></span><br><span class="line"><span class="string">    :return: None</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    ss = StandardScaler()</span><br><span class="line">    data = ss.fit_transform([[<span class="number">1.</span>, <span class="number">-1.</span>, <span class="number">3.</span>], [<span class="number">2.</span>, <span class="number">4.</span>, <span class="number">2.</span>], [<span class="number">4.</span>, <span class="number">6.</span>, <span class="number">-1.</span>]])</span><br><span class="line">    print(data)</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    SS();</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line"><span class="comment"># 结果：</span></span><br><span class="line">[[<span class="number">-1.06904497</span> <span class="number">-1.35873244</span>  <span class="number">0.98058068</span>]</span><br><span class="line"> [<span class="number">-0.26726124</span>  <span class="number">0.33968311</span>  <span class="number">0.39223227</span>]</span><br><span class="line"> [ <span class="number">1.33630621</span>  <span class="number">1.01904933</span> <span class="number">-1.37281295</span>]]</span><br></pre></td></tr></table></figure>
+<p>平常大部分缩放都用标准化，因为在已有样本足够多的情况下比较稳定，适合<strong>现代嘈杂大数据场景</strong>。</p>
+<h3 id="如何处理数据中的缺失值？"><a href="#如何处理数据中的缺失值？" class="headerlink" title="如何处理数据中的缺失值？"></a>如何处理数据中的缺失值？</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>删除</th>
+<th><strong>如果每列或者行数据缺失值达到一定的比例，建议放弃整行或者整列</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>插补</td>
+<td>可以通过缺失值每行或者每列的平均值、中位数来填充</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>sklearn缺失值API:  sklearn.preprocessing.Imputer</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Imputer(missing_values=<span class="string">'NaN'</span>, strategy=<span class="string">'mean'</span>, axis=<span class="number">0</span>)</span><br><span class="line"><span class="comment">#完成缺失值插补</span></span><br><span class="line"></span><br><span class="line">* Imputer.fit_transform(X,y)       </span><br><span class="line"><span class="comment">#X:numpy array格式的数据[n_samples,n_features]</span></span><br><span class="line"><span class="comment">#返回值：转换后的形状相同的array</span></span><br></pre></td></tr></table></figure>
+<p><strong>Imputer流程</strong></p>
+<ol>
+<li>初始化Imputer,指定”缺失值”，指定填补策略，指定行或列（注：缺失值也可以是别的指定要替换的值）</li>
+<li>调用fit_transform</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> Imputer</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">ipt</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    进行缺值插入</span></span><br><span class="line"><span class="string">    :return: None</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    ans = Imputer(missing_values=<span class="string">"NaN"</span>, strategy=<span class="string">"mean"</span>, axis=<span class="number">0</span>)  <span class="comment"># axis = 0为列 1为行</span></span><br><span class="line">    data = ans.fit_transform([[<span class="number">1</span>, <span class="number">2</span>], [np.nan, <span class="number">3</span>], [<span class="number">7</span>, <span class="number">6</span>]])</span><br><span class="line">    print(data)</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    ipt()</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line"> <span class="comment"># 结果：</span></span><br><span class="line">[[<span class="number">1.</span> <span class="number">2.</span>]</span><br><span class="line"> [<span class="number">4.</span> <span class="number">3.</span>]</span><br><span class="line"> [<span class="number">7.</span> <span class="number">6.</span>]]</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -677,12 +780,12 @@
   <li class="post-copyright-author">
     <strong>本文作者： </strong>Z.lnk</li>
   <li class="post-copyright-link"><strong>发布时间：</strong> 2019年08月06日 - 13:03:19</li>
-  <li class="post-copyright-link"><strong>最后更新：</strong> 2019年08月06日 - 23:44:30</li>
+  <li class="post-copyright-link"><strong>最后更新：</strong> 2019年08月07日 - 17:35:38</li>
   
   <li class="post-copyright-link">
    <strong>本文链接：</strong>
     
-    <a href="https://zyink.top/scikit-learn学习.html" title="01机器学习入门--特征抽取">https://zyink.top/scikit-learn学习.html</a> 
+    <a href="https://zyink.top/机器学习之特征工程.html" title="01机器学习入门--特征抽取">https://zyink.top/机器学习之特征工程.html</a> 
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！ </li>
@@ -1064,7 +1167,7 @@ show_date_time();
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#01机器学习入门—特征抽取"><span class="nav-number">1.</span> <span class="nav-text">01机器学习入门—特征抽取</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#字典特征值抽取"><span class="nav-number">1.0.1.</span> <span class="nav-text">字典特征值抽取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文本特征值抽取"><span class="nav-number">1.0.2.</span> <span class="nav-text">文本特征值抽取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tfidf文本特征抽取分析问题"><span class="nav-number">1.0.3.</span> <span class="nav-text">Tfidf文本特征抽取分析问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#tf-idf的理论依据及不足"><span class="nav-number">1.0.3.1.</span> <span class="nav-text">tf-idf的理论依据及不足</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#例子"><span class="nav-number">1.0.4.</span> <span class="nav-text">例子</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#01机器学习入门—特征抽取"><span class="nav-number">1.</span> <span class="nav-text">01机器学习入门—特征抽取</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#字典特征值抽取"><span class="nav-number">1.0.1.</span> <span class="nav-text">字典特征值抽取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文本特征值抽取"><span class="nav-number">1.0.2.</span> <span class="nav-text">文本特征值抽取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tfidf文本特征抽取分析问题"><span class="nav-number">1.0.3.</span> <span class="nav-text">Tfidf文本特征抽取分析问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#tf-idf的理论依据及不足"><span class="nav-number">1.0.3.1.</span> <span class="nav-text">tf-idf的理论依据及不足</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#例子"><span class="nav-number">1.0.4.</span> <span class="nav-text">例子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#归一化"><span class="nav-number">1.0.5.</span> <span class="nav-text">归一化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#标准化"><span class="nav-number">1.0.6.</span> <span class="nav-text">标准化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何处理数据中的缺失值？"><span class="nav-number">1.0.7.</span> <span class="nav-text">如何处理数据中的缺失值？</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1107,7 +1210,7 @@ show_date_time();
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">本站大概25k字</span>
+    <span title="站点总字数">本站大概28k字</span>
   
 
   
@@ -1116,7 +1219,7 @@ show_date_time();
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">阅读本站≈23 分钟</span>
+    <span title="站点阅读时长">阅读本站≈26 分钟</span>
   
 </div>
 
@@ -1285,7 +1388,7 @@ show_date_time();
 
 <script>
   window.livereOptions = {
-    refer: 'scikit-learn学习.html'
+    refer: '机器学习之特征工程.html'
   };
   (function(d, s) {
     var j, e = d.getElementsByTagName(s)[0];
