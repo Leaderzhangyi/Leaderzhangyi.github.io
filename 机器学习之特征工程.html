@@ -128,7 +128,7 @@
 <meta property="og:site_name" content="四火的小站">
 <meta property="og:description" content="01机器学习入门—特征抽取8月了。。这几天也是边干活边学习机器学习，空余时间我还是想把这些记录下来 这里我就记录3个方法 字典特征值抽取123456789DictVectorizer(sparse=True,..)DictVectorizer.fit_transform(X) * X: array数组或者sparse矩阵 * 返回值：转换之前的数据格式DictVectorizer.get_feat">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-07T09:35:38.338Z">
+<meta property="og:updated_time" content="2019-08-08T05:46:06.662Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="01机器学习入门--特征抽取">
 <meta name="twitter:description" content="01机器学习入门—特征抽取8月了。。这几天也是边干活边学习机器学习，空余时间我还是想把这些记录下来 这里我就记录3个方法 字典特征值抽取123456789DictVectorizer(sparse=True,..)DictVectorizer.fit_transform(X) * X: array数组或者sparse矩阵 * 返回值：转换之前的数据格式DictVectorizer.get_feat">
@@ -516,7 +516,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-08-07 17:35:38" itemprop="dateModified" datetime="2019-08-07T17:35:38+08:00">2019-08-07</time>
+                <time title="修改时间：2019-08-08 13:46:06" itemprop="dateModified" datetime="2019-08-08T13:46:06+08:00">2019-08-08</time>
               </span>
             
           
@@ -624,11 +624,10 @@
 <p>标准缩放：API  —&gt;  sklearn. preprocessing </p>
 <pre><code>                1. 归一化
                    2. 标准化
-                   3. 缺失值
+                      3. 缺失值
 </code></pre><p><strong>类别型数据：</strong>one-hot编码</p>
 <p><strong>时间类型：</strong>时间的切分 （pandas）</p>
 <h3 id="归一化"><a href="#归一化" class="headerlink" title="归一化"></a>归一化</h3><font color="#FF0000">**特点:**</font>通过对原始数据进行变换把数据映射到（默认为[0,1]）之间
-
 
 $$
 𝑋^′ =  \frac{𝑥−𝑚𝑖𝑛}{𝑚𝑎𝑥−𝑚𝑖𝑛} 
@@ -638,9 +637,17 @@ $$
 $$
 **Ps：**注：作用于每一列，max为一列的最大值，min为一列的最小值,那么X’’为最终结果，mx，mi分别为指定区间值默认mx为1,mi为0
 
+
+
 那为什么我们要做这些处理呢？见下方案例
 
+
+
 ![](https://ae01.alicdn.com/kf/Hbd4449186e7d469e87f603f22a860a9dS.png)
+
+
+
+
 
 如果单从这三种数据来相亲肯定是不公平的
 
@@ -652,7 +659,7 @@ $$
 
 我们可以清晰的发现，里程数几乎占了总体指数的全部，所以我们要进行标准缩放
 
-**核心目的：**<font color="#FF0000">**其实就是让某一个特征对最终结果不会造成更大的影响**</font>
+**核心目的：**    <font color="#FF0000">**其实就是让某一个特征对最终结果不会造成更大的影响**</font>
 
 
 
@@ -780,7 +787,7 @@ X' = \frac{x-mean}{𝜎}</script></li>
   <li class="post-copyright-author">
     <strong>本文作者： </strong>Z.lnk</li>
   <li class="post-copyright-link"><strong>发布时间：</strong> 2019年08月06日 - 13:03:19</li>
-  <li class="post-copyright-link"><strong>最后更新：</strong> 2019年08月07日 - 17:35:38</li>
+  <li class="post-copyright-link"><strong>最后更新：</strong> 2019年08月08日 - 13:46:06</li>
   
   <li class="post-copyright-link">
    <strong>本文链接：</strong>
