@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Python自动化格式化文件夹名字]]></title>
+    <url>%2F%E6%89%B9%E9%87%8F%E6%94%B9%E6%96%87%E4%BB%B6%E5%90%8D.html</url>
+    <content type="text"><![CDATA[每次同学交作业的格式都有问题，作为学委这是很头痛的事情，就想着用代码实现一些自动化的操作，来节约时间提升效率，这里主要就是os里面的改名功能，废话不多说，见代码 12345678910111213141516171819202122232425262728293031323334353637383940import os, reimport pandas as pdimport timedef get_name_list(path): data = pd.read_excel(path, header=1) data = data.drop(0) data['学号'] = data['学号'].astype('int64') # 由于是科学计数法，转化为int64 name_list = data[['姓名', '学号']] # 取出姓名 学号两列 name_list = dict(name_list.values.tolist()) # 将其转为二维列表在转为字典 name_list = dict([str(value), key] for key, value in name_list.items()) # 键值对互换 # print(name_list) return name_listdef to_rename(work_path,name_list): work_list = os.listdir(work_path) for item in work_list: res_name = os.path.splitext(item) # 分割文件名和文件类型 filename = res_name[0] filetype = res_name[1] st_number = re.findall(r'(1731\d+)', item)[0] # 利用正则抽取出该文件的学号 right_name = "《数据科学》学生实验（项目）报告-可视化设计1-" + st_number+"-"+name_list[st_number] if item != right_name: # 进行文件名判断，如果不是则重命名 os.rename(work_path+"/"+item, work_path+"/"+right_name+filetype)def main(name_path, work_path): name_list = get_name_list(name_path) to_rename(work_path,name_list)if __name__ == '__main__': start = time.time() name_path = '../data/大数据二班花名册.xls' # 名字、学号路径 work_path = 'C:/Users/hp/Desktop/99' # 作业文件夹路径 main(name_path, work_path) end = time.time() print("一共耗时------&gt;%.2fs" % (end - start))]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[打印沙漏(简单思路)]]></title>
     <url>%2F%E6%89%93%E5%8D%B0%E6%B2%99%E6%BC%8F.html</url>
     <content type="text"><![CDATA[打印沙漏本题要求你写个程序把给定的符号打印成沙漏的形状。例如给定17个“*”，要求按下列格式打印 ***** *** * *** ***** 所谓“沙漏形状”，是指每行输出奇数个符号；各行符号中心对齐；相邻两行符号数差2；符号数先从大到小顺序递减到1，再从小到大顺序递增；首尾符号数相等。 给定任意N个符号，不一定能正好组成一个沙漏。要求打印出的沙漏能用掉尽可能多的符号。 输入格式:输入在一行给出1个正整数N（≤\le≤1000）和一个符号，中间以空格分隔。 输出格式:首先打印出由给定符号组成的最大的沙漏形状，最后在一行中输出剩下没用掉的符号数。 输入样例:19 * 输出样例:***** *** * *** ***** 2 思路 ： 这里不讲百度一大堆的那种硬解的思路，而是通过python进行一个巧妙的转化 沙漏我们可以想象python里面的list列表[-3,-2,-1,0,1,2,3] 这种对称的 而打印出来 无非是找到对应的左右端口 其实就是找到沙漏的前半部分的h 我们通过大量画图模拟可以发现 给出数量和h的关系 h = \sqrt{(n+1)/2}h取整就是前半部分的加中心的值 比如n = 19 h 取整就为3 观察图形又是5行 就是模拟这个列表的过程[-2,-1,0,1,2] 如何达到？ 可以用 1map(abs,range(1-h,h)) # 来实现这个列表的模拟 接下来 我们就开始寻找 每一行输出多少个* 和 空格之间的关系了 话不多说 直接上代码 1234567n, ch = input().split(' ')n = int(n)h = int(((n + 1) / 2) ** 0.5)for i in map(abs, range(1 - h, h)): print(" " * (h - i - 1) + ch * (2 * i + 1))print(n - (2*h**2-1)) # 剩余 掌握了这h之间的关系后 同时我们也可以进行举一反三 比如给出首行的个数叫你进行相应的输出 1234n = int(input("请输入首行的*的个数："))h = int((n - 1) / 2) + 1for i in map(abs, range(1 - h, h)): print(" " * (h - 1 - i) + "*" * (i * 2 + 1))]]></content>
