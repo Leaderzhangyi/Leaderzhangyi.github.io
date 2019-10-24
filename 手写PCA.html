@@ -120,17 +120,18 @@
   daovoice('update');
   </script>
 
-  <meta name="description" content="以梦为马，不负昭华">
-<meta name="keywords" content="Z.ink">
-<meta property="og:type" content="website">
-<meta property="og:title" content="四火的小站">
-<meta property="og:url" content="https://zyink.top/categories/机器学习/index.html">
+  <meta name="description" content="手写PCA基于特征向量(协方差和散度矩阵两种方式实现)协方差实现12345678910111213141516171819202122232425262728293031323334from sklearn.datasets import load_irisfrom sklearn.decomposition import PCAimport numpy as npimport matplotli">
+<meta name="keywords" content="算法,python,降维">
+<meta property="og:type" content="article">
+<meta property="og:title" content="手写PCA基于特征向量(协方差和散度矩阵两种方式实现)">
+<meta property="og:url" content="https://zyink.top/手写PCA.html">
 <meta property="og:site_name" content="四火的小站">
-<meta property="og:description" content="以梦为马，不负昭华">
+<meta property="og:description" content="手写PCA基于特征向量(协方差和散度矩阵两种方式实现)协方差实现12345678910111213141516171819202122232425262728293031323334from sklearn.datasets import load_irisfrom sklearn.decomposition import PCAimport numpy as npimport matplotli">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-10-24T07:11:51.700Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="四火的小站">
-<meta name="twitter:description" content="以梦为马，不负昭华">
+<meta name="twitter:title" content="手写PCA基于特征向量(协方差和散度矩阵两种方式实现)">
+<meta name="twitter:description" content="手写PCA基于特征向量(协方差和散度矩阵两种方式实现)协方差实现12345678910111213141516171819202122232425262728293031323334from sklearn.datasets import load_irisfrom sklearn.decomposition import PCAimport numpy as npimport matplotli">
 
 
 
@@ -138,7 +139,7 @@
 
   
   
-  <link rel="canonical" href="https://zyink.top/categories/机器学习/">
+  <link rel="canonical" href="https://zyink.top/手写PCA">
 
 
 
@@ -148,7 +149,7 @@
   };
 </script>
 
-  <title>分类: 机器学习 | 四火的小站</title>
+  <title>手写PCA基于特征向量(协方差和散度矩阵两种方式实现) | 四火的小站</title>
   
 
 
@@ -196,7 +197,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -292,7 +293,7 @@
         
         
           
-          <li class="menu-item menu-item-categories menu-item-active">
+          <li class="menu-item menu-item-categories">
 
     
     
@@ -425,141 +426,365 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block category">
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h2>机器学习<small>分类</small>
-        </h2>
-      </div>
-
-      
-        
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zyink.top/手写PCA.html">
 
-      <h3 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Z.lnk">
+      <meta itemprop="description" content="以梦为马，不负昭华">
+      <meta itemprop="image" content="http://ww1.sinaimg.cn/large/006pybPDgy1g4kdunauenj30ql0zge0u.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="四火的小站">
+    </span>
+	
+
+
+
+
+    
+      <header class="post-header">
+
         
-          <a class="post-title-link" href="/手写PCA.html" itemprop="url">
-            
-              <span itemprop="name">手写PCA基于特征向量(协方差和散度矩阵两种方式实现)</span>
-            
-          </a>
         
-      </h3>
+          <h2 class="post-title" itemprop="name headline">
+		  
+		  
+	
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-10-24T15:10:26+08:00" content="2019-10-24">
-          10-24
-        </time>
-      </div>
+		  手写PCA基于特征向量(协方差和散度矩阵两种方式实现)
 
-    </header>
-  </article>
+              
+            
+          </h2>
+        
 
+        <div class="post-meta">
+		
+			
+
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-10-24 15:10:26 / 修改时间：15:11:51" itemprop="dateCreated datePublished" datetime="2019-10-24T15:10:26+08:00">2019-10-24</time>
+            </span>
+          
+
+          
+            
+
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/机器学习/" itemprop="url" rel="index"><span itemprop="name">机器学习</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+                 阅读次数： 
+                <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+              </span>
+            </span>
+          
+
+          <br>
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span title="本文字数">2k</span>
+            </span>
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span title="阅读时长">2 分钟</span>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/手写K-means及K-means++经典算法及实战.html" itemprop="url">
-            
-              <span itemprop="name">手写K-means及K-means++经典算法及实战</span>
-            
-          </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-10-05T13:19:40+08:00" content="2019-10-05">
-          10-05
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/机器学习之特征工程.html" itemprop="url">
-            
-              <span itemprop="name">01机器学习入门--特征抽取</span>
-            
-          </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-08-06T13:03:19+08:00" content="2019-08-06">
-          08-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+        <h1 id="手写PCA基于特征向量-协方差和散度矩阵两种方式实现"><a href="#手写PCA基于特征向量-协方差和散度矩阵两种方式实现" class="headerlink" title="手写PCA基于特征向量(协方差和散度矩阵两种方式实现)"></a>手写PCA基于特征向量(协方差和散度矩阵两种方式实现)</h1><h3 id="协方差实现"><a href="#协方差实现" class="headerlink" title="协方差实现"></a>协方差实现</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> load_iris</span><br><span class="line"><span class="keyword">from</span> sklearn.decomposition <span class="keyword">import</span> PCA</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">PPCA</span><span class="params">(data, k)</span>:</span></span><br><span class="line">    res_list = []</span><br><span class="line">    n_samples, n_features = data.shape  <span class="comment"># 提取出数据的维度和特征</span></span><br><span class="line">    data_mean = [np.mean(data[:, i]) <span class="keyword">for</span> i <span class="keyword">in</span> range(n_features)]  <span class="comment"># 计算每列的平均值</span></span><br><span class="line">    scale_data = data - data_mean  <span class="comment"># 利用numpy里面的func机制进行取均值化</span></span><br><span class="line">    res_list = [scale_data[:, i] <span class="keyword">for</span> i <span class="keyword">in</span> range(n_features)]  <span class="comment"># 将每一列作为一个属性</span></span><br><span class="line">    Cov = np.cov(res_list)  <span class="comment"># 计算协方差</span></span><br><span class="line">    eig_val, eig_vtc = np.linalg.eig(Cov)  <span class="comment"># 计算特征值和特征向量</span></span><br><span class="line">    eig_fairs = [(np.abs(eig_val[i]), eig_vtc[:, i]) <span class="keyword">for</span> i <span class="keyword">in</span> range(n_features)]</span><br><span class="line">    eig_fairs.sort(reverse=<span class="literal">True</span>)  <span class="comment"># 按特征值进行排序 特征值越大说明越重要</span></span><br><span class="line">    features = [item[<span class="number">1</span>] <span class="keyword">for</span> item <span class="keyword">in</span> eig_fairs[:k]]  <span class="comment"># 按照降维维度选取特征向量</span></span><br><span class="line">    ans = np.dot(scale_data, np.transpose(features))  <span class="comment"># 矩阵相乘 得到降维后的数据</span></span><br><span class="line">    <span class="keyword">return</span> ans</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">ppccaa</span><span class="params">(X, n)</span>:</span></span><br><span class="line">    ca = PCA(n_components=n)</span><br><span class="line">    qq = ca.fit_transform(X)</span><br><span class="line">    <span class="keyword">return</span> qq</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    X = load_iris().data  <span class="comment"># 导入鸢尾花(yuan wei hua)数据</span></span><br><span class="line">    res = PPCA(X, <span class="number">2</span>)  <span class="comment"># 传入数据和要降的纬度</span></span><br><span class="line">    <span class="comment"># 验证</span></span><br><span class="line">    print(res)</span><br><span class="line">    print(<span class="string">"分割线"</span>.center(<span class="number">50</span>, <span class="string">"="</span>))</span><br><span class="line">    print(ppccaa(X, <span class="number">1</span>))</span><br></pre></td></tr></table></figure>
+<h3 id="散度矩阵实现"><a href="#散度矩阵实现" class="headerlink" title="散度矩阵实现"></a>散度矩阵实现</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> load_iris</span><br><span class="line"><span class="keyword">from</span> sklearn.decomposition <span class="keyword">import</span> PCA</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">pca</span><span class="params">(X, k)</span>:</span></span><br><span class="line"></span><br><span class="line">    n_samples, n_features = X.shape</span><br><span class="line">    mean = np.array([np.mean(X[:, i]) <span class="keyword">for</span> i <span class="keyword">in</span> range(n_features)])</span><br><span class="line"></span><br><span class="line">    norm_X = X - mean</span><br><span class="line"></span><br><span class="line">    scatter_matrix = np.dot(np.transpose(norm_X), norm_X)     <span class="comment"># 计算散度矩阵</span></span><br><span class="line">    <span class="comment"># 协方差矩阵和散度矩阵关系密切，散度矩阵就是协方差矩阵乘以(总数据量-1)</span></span><br><span class="line">    <span class="comment"># 因此他们的特征梗和特征向量是一样的</span></span><br><span class="line">    eig_val, eig_vec = np.linalg.eig(scatter_matrix)</span><br><span class="line">    eig_pairs = [(np.abs(eig_val[i]), eig_vec[:, i]) <span class="keyword">for</span> i <span class="keyword">in</span> range(n_features)]</span><br><span class="line">    eig_pairs.sort(reverse=<span class="literal">True</span>)</span><br><span class="line">    feature = np.array([ele[<span class="number">1</span>] <span class="keyword">for</span> ele <span class="keyword">in</span> eig_pairs[:k]])</span><br><span class="line">    data = np.dot(norm_X, np.transpose(feature))</span><br><span class="line">    <span class="keyword">return</span> data</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    X = load_iris().data</span><br><span class="line">    <span class="comment"># print(X)</span></span><br><span class="line">    <span class="comment"># X = np.array([[-1, 1], [-2, -1], [-3, -2], [1, 1], [2, 1], [3, 2]])</span></span><br><span class="line">    res = pca(X, <span class="number">1</span>)</span><br><span class="line">    print(res)</span><br></pre></td></tr></table></figure>
 
       
     </div>
 
+    
+      
+
+  <div class="popular-posts-header">相关文章推荐</div>
+  <ul class="popular-posts">
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="\手写K-means及K-means++经典算法及实战.html" rel="bookmark">手写K-means及K-means++经典算法及实战</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="\各类基础排序汇总.html" rel="bookmark">各类经典排序汇总(结合视频)</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="\简单的询问.html" rel="bookmark">简单的询问（延时标记+差分）</a></div>
+      
+    </li>
+  
+  </ul>
+
+
+    
+
+    
+    
+    
+
+    
+	
+
+
+    
+      
+    
+    
+      <div>
+        <div id="reward-container">
+  <div>觉得文章有用，给个赞赏吧！</div>
+  <button id="reward-button" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+
+    
+      
+      
+        
+      
+      <div style="display: inline-block">
+        <img src="/images/wechatpay.png" alt="Z.lnk 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+      
+      
+        
+      
+      <div style="display: inline-block">
+        <img src="/images/alipay.png" alt="Z.lnk 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        
+
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Z.lnk</li>
+  <li class="post-copyright-link"><strong>发布时间：</strong> 2019年10月24日 - 15:10:26</li>
+  <li class="post-copyright-link"><strong>最后更新：</strong> 2019年10月24日 - 15:11:51</li>
+  
+  <li class="post-copyright-link">
+   <strong>本文链接：</strong>
+    
+    <a href="https://zyink.top/手写PCA.html" title="手写PCA基于特征向量(协方差和散度矩阵两种方式实现)">https://zyink.top/手写PCA.html</a> 
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！ </li>
+
+
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        
+          
+        
+        <div class="post-tags">
+          
+            <a href="/tags/算法/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
+          
+            <a href="/tags/python/" rel="tag"><i class="fa fa-tag"></i> python</a>
+          
+            <a href="/tags/降维/" rel="tag"><i class="fa fa-tag"></i> 降维</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div class="social_share">
+            
+            
+              <div id="needsharebutton-postbottom">
+                <span class="btn">
+                  <i class="fa fa-share-alt" aria-hidden="true"></i>
+                </span>
+              </div>
+            
+            
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/手写K-means及K-means++经典算法及实战.html" rel="next" title="手写K-means及K-means++经典算法及实战">
+                <i class="fa fa-chevron-left"></i> 手写K-means及K-means++经典算法及实战
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80NTAyNy8yMTU0NQ"></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -579,8 +804,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -841,6 +1075,23 @@ show_date_time();
       </div>
 
       
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#手写PCA基于特征向量-协方差和散度矩阵两种方式实现"><span class="nav-number">1.</span> <span class="nav-text">手写PCA基于特征向量(协方差和散度矩阵两种方式实现)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#协方差实现"><span class="nav-number">1.0.1.</span> <span class="nav-text">协方差实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#散度矩阵实现"><span class="nav-number">1.0.2.</span> <span class="nav-text">散度矩阵实现</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
 
       
         <div class="back-to-top">
@@ -1027,6 +1278,10 @@ show_date_time();
 
 
   
+  <script src="/js/scrollspy.js?v=7.1.2"></script>
+<script src="/js/post-details.js?v=7.1.2"></script>
+
+
 
   
 
@@ -1044,6 +1299,26 @@ show_date_time();
 
   
 
+
+  
+    
+
+
+<script>
+  window.livereOptions = {
+    refer: '手写PCA.html'
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+  
 
 
   
