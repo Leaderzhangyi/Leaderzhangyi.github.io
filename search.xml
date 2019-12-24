@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[线性代数图形学习]]></title>
     <url>%2FLinear_algebra_review.html</url>
-    <content type="text"><![CDATA[最近老师推荐了一套线代视频，趁热打铁 →全套视频视频传送门 https://www.youtube.com/watch?v=XkY2DOUCWMU&amp;list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab&amp;index=4 需要科学上网噢 关于线性相关？ 产生了新的维度 — 线性无关 没有新的维度产生 — 线性相关 线性变化 基低的变化同时，能保持网格线平行且等距分布，并且保持原点不变 \left[\begin{array}{ll}{a} & {b} \\ {c} & {d}\end{array}\right]\left[\begin{array}{l}{x} \\ {y}\end{array}\right]=x\left[\begin{array}{l}{a} \\ {c}\end{array}\right]+y\left[\begin{array}{l}{b} \\ {d}\end{array}\right]=\left[\begin{array}{l}{a x+b y} \\ {c x+d y}\end{array}\right]So,矩阵就代表一个特定的线性变换,矩阵相乘就是将线性变换作用域那个向量 Never forget what the represent!]]></content>
+    <content type="text"><![CDATA[最近老师推荐了一套线代视频，趁热打铁 全套视频视频传送门 需要科学上网噢 关于线性相关？ 产生了新的维度 — 线性无关 没有新的维度产生 — 线性相关 线性变化 基低的变化同时，能保持网格线平行且等距分布，并且保持原点不变 \left[\begin{array}{ll}{a} & {b} \\ {c} & {d}\end{array}\right]\left[\begin{array}{l}{x} \\ {y}\end{array}\right]=x\left[\begin{array}{l}{a} \\ {c}\end{array}\right]+y\left[\begin{array}{l}{b} \\ {d}\end{array}\right]=\left[\begin{array}{l}{a x+b y} \\ {c x+d y}\end{array}\right]So,矩阵就代表一个特定的线性变换,矩阵相乘就是将线性变换作用域那个向量 Never forget what the represent!]]></content>
       <categories>
         <category>机器学习</category>
         <category>数学</category>
