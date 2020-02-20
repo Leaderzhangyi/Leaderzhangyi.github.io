@@ -129,8 +129,9 @@
 <meta property="og:description" content="马上就要美赛了嘛，涉及到跑大量数据，处理复杂的模型 这里我就总结一下如何在只有cmd的情况下使用jupyter notebook 1. 安装jupyter服务1pip install jupyter # 最好用pip3 2. 配置远程访问jupyter先输入python3进入交互模式 ，见图输入以下内容，设置好密码过后 会自动生成一个Verify password复制保存下来   退出交互模式 2">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://pic.downk.cc/item/5e43d40e2fb38b8c3cd43097.png">
+<meta property="og:image" content="https://pic.downk.cc/item/5e4e3eb248b86553eed8b785.png">
 <meta property="og:image" content="https://pic.downk.cc/item/5e43d8ba2fb38b8c3cd4eef5.png">
-<meta property="og:updated_time" content="2020-02-13T05:40:04.514Z">
+<meta property="og:updated_time" content="2020-02-20T08:10:23.954Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在远程服务器上搭建jupyter">
 <meta name="twitter:description" content="马上就要美赛了嘛，涉及到跑大量数据，处理复杂的模型 这里我就总结一下如何在只有cmd的情况下使用jupyter notebook 1. 安装jupyter服务1pip install jupyter # 最好用pip3 2. 配置远程访问jupyter先输入python3进入交互模式 ，见图输入以下内容，设置好密码过后 会自动生成一个Verify password复制保存下来   退出交互模式 2">
@@ -519,7 +520,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-02-13 13:40:04" itemprop="dateModified" datetime="2020-02-13T13:40:04+08:00">2020-02-13</time>
+                <time title="修改时间：2020-02-20 16:10:23" itemprop="dateModified" datetime="2020-02-20T16:10:23+08:00">2020-02-20</time>
               </span>
             
           
@@ -568,7 +569,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span title="本文字数">1.1k</span>
+              <span title="本文字数">1.2k</span>
             </span>
           
 
@@ -611,7 +612,7 @@
 <p>就会自动在根目录下生成文件（~/.jupyter/jupyter_notebook_config.py），如果看不到，选项中选择显示隐藏文件</p>
 <h3 id="2-2修改配置文件"><a href="#2-2修改配置文件" class="headerlink" title="2.2修改配置文件"></a>2.2修改配置文件</h3><p>建议先把jupyter_notebook_config.py文件传输到本地修改完成再上传</p>
 <p>找到以下字符串进行修改</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">c.NotebookApp.ip=<span class="string">'*'</span> <span class="comment"># 如果这里修过过后启动服务报错 则修改为c.NotebookApp.ip='0.0.0.0'</span></span><br><span class="line">c.NotebookApp.password=<span class="string">u'sha1****'</span> <span class="comment">#就之前保存的验证密码</span></span><br><span class="line">c.NotebookApp.open_browser =<span class="literal">False</span> <span class="comment"># 设置是否自动打开浏览器</span></span><br><span class="line">c.NotebookApp.port =<span class="number">8888</span>  <span class="comment"># 设置端口</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">c.NotebookApp.ip=<span class="string">'*'</span> <span class="comment"># 如果这里修过过后启动服务报错 则修改为c.NotebookApp.ip='0.0.0.0'</span></span><br><span class="line">c.NotebookApp.password=<span class="string">u'sha1****'</span> <span class="comment">#就之前保存的验证密码</span></span><br><span class="line">c.NotebookApp.open_browser =<span class="literal">False</span> <span class="comment"># 设置是否自动打开浏览器</span></span><br><span class="line">c.NotebookApp.port =<span class="number">8888</span>  <span class="comment"># 设置端口</span></span><br><span class="line">c.NotebookApp.allow_remote_access = <span class="literal">True</span></span><br></pre></td></tr></table></figure>
 <h2 id="3-启动服务"><a href="#3-启动服务" class="headerlink" title="3. 启动服务"></a>3. 启动服务</h2><p>这里推荐两种</p>
 <ol>
 <li><p>入门：<code>jupyter notebook --allow-root</code></p>
@@ -631,6 +632,8 @@
 </ol>
 <p>启动以后在本机 输入<code>http://{服务器ip}:8888</code> 进行访问</p>
 <p>第一次进入要输入之前设置的密码，但为了效率见第4步</p>
+<p><img src="https://pic.downk.cc/item/5e4e3eb248b86553eed8b785.png" alt></p>
+<p>若安全组未设置一定要去添加上端口号，设置以上</p>
 <h2 id="4-安装增强功能（自动补全之类）"><a href="#4-安装增强功能（自动补全之类）" class="headerlink" title="4. 安装增强功能（自动补全之类）"></a>4. 安装增强功能（自动补全之类）</h2><p>在终端中依次执行以下4行代码</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pip install jupyter_contrib_nbextensions</span><br><span class="line">jupyter contrib nbextension install --user</span><br><span class="line">pip install jupyter_nbextensions_configurator</span><br><span class="line">jupyter nbextensions_configurator enable --user</span><br></pre></td></tr></table></figure>
 <p><img src="https://pic.downk.cc/item/5e43d8ba2fb38b8c3cd4eef5.png" alt></p>
@@ -732,7 +735,7 @@
   <li class="post-copyright-author">
     <strong>本文作者： </strong>Z.lnk</li>
   <li class="post-copyright-link"><strong>发布时间：</strong> 2020年02月12日 - 18:53:57</li>
-  <li class="post-copyright-link"><strong>最后更新：</strong> 2020年02月13日 - 13:40:04</li>
+  <li class="post-copyright-link"><strong>最后更新：</strong> 2020年02月20日 - 16:10:23</li>
   
   <li class="post-copyright-link">
    <strong>本文链接：</strong>
