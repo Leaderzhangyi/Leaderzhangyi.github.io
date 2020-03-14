@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[pandas如何基于某一列的数据对其它列进行操作]]></title>
+    <url>%2Fpandas%20operate.html</url>
+    <content type="text"><![CDATA[我们就简单举一个例子 把star_rating为3到4中的positive减去0.25 把star_rating小于3的positive减去0.3 star_rating positive 0 5 0.98072 1 1 0.737101 2 5 0.945672 3 2 0.729632 4 5 0.99853 5 3 0.408589 6 1 0.650988 7 1 0.666691 8 5 0.899953 9 4 0.895248 10 4 0.609864 11 3 0.614354 12 4 0.892443 13 3 0.648455 14 4 0.880974 15 5 0.998756 16 3 0.046396 17 4 0.882441 18 1 0.509702 19 5 0.959157 20 1 0.640282 这里提供多种方法有麻烦有简单： 法一（利用切片）： 12dff.loc[(3 &lt;= dff["star_rating"])&amp;(dff["star_rating"] &lt;= 4),"positive"] = dff.loc[(3 &lt;= dff["star_rating"])&amp;(dff["star_rating"] &lt;= 4),"positive"].apply(lambda x:np.abs(x-0.25))dff.loc[(0 &lt;= dff["star_rating"])&amp;(dff["star_rating"] &lt; 3),"positive"] = dff.loc[(0 &lt;= dff["star_rating"])&amp;(dff["star_rating"] &lt; 3),"positive"].apply(lambda x:np.abs(x-0.3)) 法二（利用apply + lambda）： 1234567def to_cal(x,y): if 3 &lt;=x &lt;=4: y -= 0.25 elif 1 &lt;= x &lt; 3: y -= 0.2 return y dff.apply(lambda row:to_cal(row["star_rating"],row["positive"]),axis = 1) 法三 （切片 + apply) 12345678def fun(a): if a['star_rating'] &lt;= 3: a.loc["positive"] = a.loc["positive"] - 0.3 elif a['star_rating'] &gt;3 and a['star_rating'] &lt;= 4: a.loc['positive'] = a.loc['positive'] - 0.25 return adata = dff.loc[:].apply(fun,axis = 1) 以上提供了3种解决思路，如果在看的大佬们还有更好的思路欢迎提出来哦]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>数据分析</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[线性筛的两种方法]]></title>
     <url>%2FjudgePrime.html</url>
     <content type="text"><![CDATA[埃氏筛法 O(n*log(logn))123456789101112131415is_prime = [0 for _ in range(1001)] # 初始化列表def Prime(): for i in range(2, 1001): if is_prime[i] == 0: # 第一次未被标记，说明为素数 for j in range(i + i, 1001, i): is_prime[j] = 1 # 素数的倍数为素数，所以标记为1if __name__ == '__main__': Prime() for i in range(2, 1001): # 遍历数组，如果被标记为0的则输出 if is_prime[i] == 0: print(i, end=" ") 欧拉筛 线性O(n)复杂度12345678910111213flag = [0 for _ in range(105)]a = []for i in range(2, 101): if flag[i] == 0: a.append(i) # 判断是否为素数 j = 0 while i * a[j] &lt;= 100: flag[a[j] * i] = 1 # 筛选 if i % a[j] == 0: # 关键优化！ break j += 1print(a)]]></content>

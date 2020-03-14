@@ -322,7 +322,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">19</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">20</span></a>
 
   </li>
         
@@ -541,6 +541,18 @@
           
             
             
+              
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/numpy_common.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/numpy_common.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -659,6 +671,13 @@
     <li class="popular-posts-item">
       
       
+      <div class="popular-posts-title"><a href="\pandas operate.html" rel="bookmark">pandas如何基于某一列的数据对其它列进行操作</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
       <div class="popular-posts-title"><a href="\python.html" rel="bookmark">Python单线程爬取QQ空间说说存入MySQL并生成词云（超详细讲解，踩坑经历）</a></div>
       
     </li>
@@ -667,13 +686,6 @@
       
       
       <div class="popular-posts-title"><a href="\remote_jupyter_use.html" rel="bookmark">在远程服务器上搭建jupyter</a></div>
-      
-    </li>
-  
-    <li class="popular-posts-item">
-      
-      
-      <div class="popular-posts-title"><a href="\compare KNN with sklearn_knn.html" rel="bookmark">手写KNN与sklearn进行对比</a></div>
       
     </li>
   
@@ -839,7 +851,6 @@
 
   
     <div class="comments" id="comments">
-      <div id="lv-container" data-id="city" data-uid="MTAyMC80NTAyNy8yMTU0NQ"></div>
     </div>
 
   
@@ -892,7 +903,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">19</span>
+                    <span class="site-state-item-count">20</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1089,7 +1100,7 @@
               </ul>
             </div>
           
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=862118113&auto=1&height=66"></iframe>
+
 
 		    <center><div id="days" style="color: #35cc4b;font-size: 10px;"></div></center>
 
@@ -1206,7 +1217,7 @@ show_date_time();
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">本站大概47k字</span>
+    <span title="站点总字数">本站大概48k字</span>
   
 
   
@@ -1215,7 +1226,7 @@ show_date_time();
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">阅读本站≈43 分钟</span>
+    <span title="站点阅读时长">阅读本站≈44 分钟</span>
   
 </div>
 
@@ -1376,25 +1387,33 @@ show_date_time();
   
 
   
-
-
   
-    
 
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
 
 <script>
-  window.livereOptions = {
-    refer: 'numpy_common.html'
-  };
-  (function(d, s) {
-    var j, e = d.getElementsByTagName(s)[0];
-    if (typeof LivereTower === 'function') { return; }
-    j = d.createElement(s);
-    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-    j.async = true;
-    e.parentNode.insertBefore(j, e);
-  })(document, 'script');
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#comments',
+    verify: true,
+    notify: true,
+    appId: 'hYXsifhFjMtvFn5QII1l634P-gzGzoHsz',
+    appKey: 'N86XQs7UcKLUI1YlUBzM2LEQ',
+    placeholder: 'So.....what do you want to say?',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: 'zh-cn' || 'zh-cn'
+  });
 </script>
+
+
+
 
   
 
@@ -1848,9 +1867,7 @@ if ($('body').find('pre.mermaid').length) {
   
 
   
-  
-      <script type="text/javascript" src="/js/src/clicklove.js"></script>
-  
+
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/node_modules/live2d-widget-model-shizuku/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body>
 
 

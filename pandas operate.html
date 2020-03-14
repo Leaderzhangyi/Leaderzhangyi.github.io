@@ -120,17 +120,18 @@
   daovoice('update');
   </script>
 
-  <meta name="description" content="以梦为马，不负昭华">
-<meta name="keywords" content="Z.ink">
-<meta property="og:type" content="website">
-<meta property="og:title" content="四火的小站">
-<meta property="og:url" content="https://zyink.top/archives/2019/10/index.html">
+  <meta name="description" content="我们就简单举一个例子 把star_rating为3到4中的positive减去0.25 把star_rating小于3的positive减去0.3      star_rating positive     0 5 0.98072   1 1 0.737101   2 5 0.945672   3 2 0.729632   4 5 0.99853   5 3 0.408589   6 1 0.65">
+<meta name="keywords" content="python,数据分析">
+<meta property="og:type" content="article">
+<meta property="og:title" content="pandas如何基于某一列的数据对其它列进行操作">
+<meta property="og:url" content="https://zyink.top/pandas operate.html">
 <meta property="og:site_name" content="四火的小站">
-<meta property="og:description" content="以梦为马，不负昭华">
+<meta property="og:description" content="我们就简单举一个例子 把star_rating为3到4中的positive减去0.25 把star_rating小于3的positive减去0.3      star_rating positive     0 5 0.98072   1 1 0.737101   2 5 0.945672   3 2 0.729632   4 5 0.99853   5 3 0.408589   6 1 0.65">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-03-14T08:18:27.380Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="四火的小站">
-<meta name="twitter:description" content="以梦为马，不负昭华">
+<meta name="twitter:title" content="pandas如何基于某一列的数据对其它列进行操作">
+<meta name="twitter:description" content="我们就简单举一个例子 把star_rating为3到4中的positive减去0.25 把star_rating小于3的positive减去0.3      star_rating positive     0 5 0.98072   1 1 0.737101   2 5 0.945672   3 2 0.729632   4 5 0.99853   5 3 0.408589   6 1 0.65">
 
 
 
@@ -138,7 +139,7 @@
 
   
   
-  <link rel="canonical" href="https://zyink.top/archives/2019/10/">
+  <link rel="canonical" href="https://zyink.top/pandas operate">
 
 
 
@@ -148,7 +149,7 @@
   };
 </script>
 
-  <title>归档 | 四火的小站</title>
+  <title>pandas如何基于某一列的数据对其它列进行操作 | 四火的小站</title>
   
 
 
@@ -196,7 +197,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -310,7 +311,7 @@
         
         
           
-          <li class="menu-item menu-item-archives menu-item-active">
+          <li class="menu-item menu-item-archives">
 
     
     
@@ -425,145 +426,511 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zyink.top/pandas operate.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Z.lnk">
+      <meta itemprop="description" content="以梦为马，不负昭华">
+      <meta itemprop="image" content="http://ww1.sinaimg.cn/large/006pybPDgy1g4kdunauenj30ql0zge0u.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="四火的小站">
+    </span>
+	
+
+
+
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+		  
+		  
+	
+
+		  pandas如何基于某一列的数据对其它列进行操作
+
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+		
+			
+
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2020-03-10 00:29:06" itemprop="dateCreated datePublished" datetime="2020-03-10T00:29:06+08:00">2020-03-10</time>
+            </span>
+          
+
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-03-14 16:18:27" itemprop="dateModified" datetime="2020-03-14T16:18:27+08:00">2020-03-14</time>
+              </span>
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/pandas operate.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/pandas operate.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+                 阅读次数： 
+                <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+              </span>
+            </span>
+          
+
+          <br>
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span title="本文字数">1.4k</span>
+            </span>
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span title="阅读时长">1 分钟</span>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-      <span class="archive-page-counter">
+      
+
+      
+        <p>我们就简单举一个例子</p>
+<p>把star_rating为3到4中的positive减去0.25</p>
+<p>把star_rating小于3的positive减去0.3</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th></th>
+<th>star_rating</th>
+<th>positive</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>5</td>
+<td>0.98072</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>0.737101</td>
+</tr>
+<tr>
+<td>2</td>
+<td>5</td>
+<td>0.945672</td>
+</tr>
+<tr>
+<td>3</td>
+<td>2</td>
+<td>0.729632</td>
+</tr>
+<tr>
+<td>4</td>
+<td>5</td>
+<td>0.99853</td>
+</tr>
+<tr>
+<td>5</td>
+<td>3</td>
+<td>0.408589</td>
+</tr>
+<tr>
+<td>6</td>
+<td>1</td>
+<td>0.650988</td>
+</tr>
+<tr>
+<td>7</td>
+<td>1</td>
+<td>0.666691</td>
+</tr>
+<tr>
+<td>8</td>
+<td>5</td>
+<td>0.899953</td>
+</tr>
+<tr>
+<td>9</td>
+<td>4</td>
+<td>0.895248</td>
+</tr>
+<tr>
+<td>10</td>
+<td>4</td>
+<td>0.609864</td>
+</tr>
+<tr>
+<td>11</td>
+<td>3</td>
+<td>0.614354</td>
+</tr>
+<tr>
+<td>12</td>
+<td>4</td>
+<td>0.892443</td>
+</tr>
+<tr>
+<td>13</td>
+<td>3</td>
+<td>0.648455</td>
+</tr>
+<tr>
+<td>14</td>
+<td>4</td>
+<td>0.880974</td>
+</tr>
+<tr>
+<td>15</td>
+<td>5</td>
+<td>0.998756</td>
+</tr>
+<tr>
+<td>16</td>
+<td>3</td>
+<td>0.046396</td>
+</tr>
+<tr>
+<td>17</td>
+<td>4</td>
+<td>0.882441</td>
+</tr>
+<tr>
+<td>18</td>
+<td>1</td>
+<td>0.509702</td>
+</tr>
+<tr>
+<td>19</td>
+<td>5</td>
+<td>0.959157</td>
+</tr>
+<tr>
+<td>20</td>
+<td>1</td>
+<td>0.640282</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>这里提供多种方法有麻烦有简单：</p>
+<p><strong>法一（利用切片）：</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dff.loc[(<span class="number">3</span> &lt;= dff[<span class="string">"star_rating"</span>])&amp;(dff[<span class="string">"star_rating"</span>] &lt;= <span class="number">4</span>),<span class="string">"positive"</span>] = dff.loc[(<span class="number">3</span> &lt;= dff[<span class="string">"star_rating"</span>])&amp;(dff[<span class="string">"star_rating"</span>] &lt;= <span class="number">4</span>),<span class="string">"positive"</span>].apply(<span class="keyword">lambda</span> x:np.abs(x<span class="number">-0.25</span>))</span><br><span class="line">dff.loc[(<span class="number">0</span> &lt;= dff[<span class="string">"star_rating"</span>])&amp;(dff[<span class="string">"star_rating"</span>] &lt; <span class="number">3</span>),<span class="string">"positive"</span>] = dff.loc[(<span class="number">0</span> &lt;= dff[<span class="string">"star_rating"</span>])&amp;(dff[<span class="string">"star_rating"</span>] &lt;  <span class="number">3</span>),<span class="string">"positive"</span>].apply(<span class="keyword">lambda</span> x:np.abs(x<span class="number">-0.3</span>))</span><br></pre></td></tr></table></figure>
+<p><strong>法二（利用apply + lambda）：</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">to_cal</span><span class="params">(x,y)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> <span class="number">3</span> &lt;=x &lt;=<span class="number">4</span>:</span><br><span class="line">        y -= <span class="number">0.25</span> </span><br><span class="line">    <span class="keyword">elif</span> <span class="number">1</span> &lt;= x &lt; <span class="number">3</span>:</span><br><span class="line">        y -= <span class="number">0.2</span></span><br><span class="line">    <span class="keyword">return</span> y </span><br><span class="line">dff.apply(<span class="keyword">lambda</span> row:to_cal(row[<span class="string">"star_rating"</span>],row[<span class="string">"positive"</span>]),axis = <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<p><strong>法三 （切片 + apply)</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun</span><span class="params">(a)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> a[<span class="string">'star_rating'</span>] &lt;= <span class="number">3</span>:</span><br><span class="line">        a.loc[<span class="string">"positive"</span>]  = a.loc[<span class="string">"positive"</span>] - <span class="number">0.3</span></span><br><span class="line">    <span class="keyword">elif</span> a[<span class="string">'star_rating'</span>] &gt;<span class="number">3</span> <span class="keyword">and</span> a[<span class="string">'star_rating'</span>] &lt;= <span class="number">4</span>:</span><br><span class="line">        a.loc[<span class="string">'positive'</span>] = a.loc[<span class="string">'positive'</span>] - <span class="number">0.25</span></span><br><span class="line">    <span class="keyword">return</span> a</span><br><span class="line"></span><br><span class="line">data = dff.loc[:].apply(fun,axis = <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<p>以上提供了3种解决思路，如果在看的大佬们还有更好的思路欢迎提出来哦</p>
+
+      
+    </div>
+
+    
+      
+
+  <div class="popular-posts-header">相关文章推荐</div>
+  <ul class="popular-posts">
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="\numpy_common.html" rel="bookmark">Numpy实用API</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="\python.html" rel="bookmark">Python单线程爬取QQ空间说说存入MySQL并生成词云（超详细讲解，踩坑经历）</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="\remote_jupyter_use.html" rel="bookmark">在远程服务器上搭建jupyter</a></div>
+      
+    </li>
+  
+  </ul>
+
+
+    
+
+    
+    
+    
+
+    
+	
+
+
+    
+      
+    
+    
+      <div>
+        <div id="reward-container">
+  <div>觉得文章有用，给个赞赏吧！</div>
+  <button id="reward-button" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+
+    
+      
+      
         
+      
+      <div style="display: inline-block">
+        <img src="/images/wechatpay.png" alt="Z.lnk 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+      
+      
         
+      
+      <div style="display: inline-block">
+        <img src="/images/alipay.png" alt="Z.lnk 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        
+
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Z.lnk</li>
+  <li class="post-copyright-link"><strong>发布时间：</strong> 2020年03月10日 - 00:29:06</li>
+  <li class="post-copyright-link"><strong>最后更新：</strong> 2020年03月14日 - 16:18:27</li>
+  
+  <li class="post-copyright-link">
+   <strong>本文链接：</strong>
+    
+    <a href="https://zyink.top/pandas operate.html" title="pandas如何基于某一列的数据对其它列进行操作">https://zyink.top/pandas operate.html</a> 
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！ </li>
+
+
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
         
           
         
-        嗯..! 目前共计 20 篇日志。 继续努力。
-      </span>
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"><i class="fa fa-tag"></i> python</a>
+          
+            <a href="/tags/数据分析/" rel="tag"><i class="fa fa-tag"></i> 数据分析</a>
+          
+        </div>
       
 
       
+      
+        <div class="post-widgets">
+        
 
-        
-        
         
 
         
           
-          <div class="collection-title">
-            <h2 class="archive-year" id="archive-year-2019">2019</h2>
+          <div class="social_share">
+            
+            
+              <div id="needsharebutton-postbottom">
+                <span class="btn">
+                  <i class="fa fa-share-alt" aria-hidden="true"></i>
+                </span>
+              </div>
+            
+            
           </div>
         
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/手写PCA.html" itemprop="url">
-            
-              <span itemprop="name">手写PCA基于特征向量(协方差和散度矩阵两种方式实现)</span>
-            
-          </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-10-24T15:10:26+08:00" content="2019-10-24">
-          10-24
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
+        </div>
+      
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/手写K-means及K-means++经典算法及实战.html" itemprop="url">
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span itemprop="name">手写K-means及K-means++经典算法及实战</span>
+              <a href="/judgePrime.html" rel="next" title="线性筛的两种方法">
+                <i class="fa fa-chevron-left"></i> 线性筛的两种方法
+              </a>
             
-          </a>
-        
-      </h3>
+          </div>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-10-05T13:19:40+08:00" content="2019-10-05">
-          10-05
-        </time>
-      </div>
+          <span class="post-nav-divider"></span>
 
-    </header>
-  </article>
-
-
-
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
 
-    </div>
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+
+  
+
+
 
         </div>
         
@@ -1049,6 +1416,10 @@ show_date_time();
 
 
   
+  <script src="/js/scrollspy.js?v=7.1.2"></script>
+<script src="/js/post-details.js?v=7.1.2"></script>
+
+
 
   
 
@@ -1092,6 +1463,8 @@ show_date_time();
 
 
 
+
+  
 
 
   
