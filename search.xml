@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[自动化格式化文件夹名字使用说明]]></title>
+    <url>%2Fhomework_change.html</url>
+    <content type="text"><![CDATA[步骤说明(对应图上标签) 首先，选择包含学号、姓名信息的Excel文件，Excel里面第一行的列名一定要有学号姓名 读取数据，则可以再左边看到相应数据 选择你要修改文件名的文件夹(必填) 输入你们学号的前四位(必填) 填写文件主要名称(选填) 比如填写的是： 实验报告1 就是 学号-姓名-实验报告1 选择组成方式 选择学号姓名文件名称的连接方式 开始修改 如果开启了检测未交那这里会统计有多少人未交 这里会显示学号错误的同学 如果使用中发现相应Bug，欢迎在下方评论]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>GUI</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[pandas如何基于某一列的数据对其它列进行操作]]></title>
     <url>%2Fpandas%20operate.html</url>
     <content type="text"><![CDATA[我们就简单举一个例子 把star_rating为3到4中的positive减去0.25 把star_rating小于3的positive减去0.3 star_rating positive 0 5 0.98072 1 1 0.737101 2 5 0.945672 3 2 0.729632 4 5 0.99853 5 3 0.408589 6 1 0.650988 7 1 0.666691 8 5 0.899953 9 4 0.895248 10 4 0.609864 11 3 0.614354 12 4 0.892443 13 3 0.648455 14 4 0.880974 15 5 0.998756 16 3 0.046396 17 4 0.882441 18 1 0.509702 19 5 0.959157 20 1 0.640282 这里提供多种方法有麻烦有简单： 法一（利用切片）： 12dff.loc[(3 &lt;= dff["star_rating"])&amp;(dff["star_rating"] &lt;= 4),"positive"] = dff.loc[(3 &lt;= dff["star_rating"])&amp;(dff["star_rating"] &lt;= 4),"positive"].apply(lambda x:np.abs(x-0.25))dff.loc[(0 &lt;= dff["star_rating"])&amp;(dff["star_rating"] &lt; 3),"positive"] = dff.loc[(0 &lt;= dff["star_rating"])&amp;(dff["star_rating"] &lt; 3),"positive"].apply(lambda x:np.abs(x-0.3)) 法二（利用apply + lambda）： 1234567def to_cal(x,y): if 3 &lt;=x &lt;=4: y -= 0.25 elif 1 &lt;= x &lt; 3: y -= 0.2 return y dff.apply(lambda row:to_cal(row["star_rating"],row["positive"]),axis = 1) 法三 （切片 + apply) 12345678def fun(a): if a['star_rating'] &lt;= 3: a.loc["positive"] = a.loc["positive"] - 0.3 elif a['star_rating'] &gt;3 and a['star_rating'] &lt;= 4: a.loc['positive'] = a.loc['positive'] - 0.25 return adata = dff.loc[:].apply(fun,axis = 1) 以上提供了3种解决思路，如果在看的大佬们还有更好的思路欢迎提出来哦]]></content>
